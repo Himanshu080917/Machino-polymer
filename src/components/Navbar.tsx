@@ -28,16 +28,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCapabilities, onOpenContac
 
   return (
     <header className="w-full bg-[#EDF4F0] border-b border-[#D8E6DE] sticky top-0 z-50 transition-colors duration-200">
-      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12 py-3.5 flex items-center justify-between">
+      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12 py-3 flex items-center justify-between">
         
-        {/* Left: MPL Circular Dotted Logo + Brand Name */}
-        <a href="#hero" className="flex items-center gap-3.5 group focus:outline-none">
+        {/* Left: MPL Circular Dotted Swirl Logo + Brand Name */}
+        <a href="#hero" className="flex items-center gap-3 group focus:outline-none">
           <img
             src="/icons/logo-mpl.svg"
             alt="MPL Logo"
-            className="w-9 h-9 shrink-0 transform group-hover:rotate-45 transition-transform duration-500"
+            className="w-11 h-11 shrink-0 transform group-hover:rotate-12 transition-transform duration-500"
           />
-          <span className="text-[#111827] font-display font-black text-lg sm:text-xl tracking-tight">
+          <span className="text-[#0F172A] font-display font-extrabold text-lg sm:text-xl tracking-tight">
             Machino Polymers Limited
           </span>
         </a>
@@ -50,11 +50,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCapabilities, onOpenContac
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link)}
-                className="text-sm font-semibold text-[#1F2937] hover:text-[#FF5500] transition-colors flex items-center gap-1 group/link cursor-pointer"
+                className="text-sm font-semibold text-[#1F2937] hover:text-[#FF5500] transition-colors flex items-center gap-1.5 group/link cursor-pointer"
               >
                 <span>{link.label}</span>
                 {link.hasArrow && (
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#1F2937] group-hover/link:text-[#FF5500] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                  <span className="text-sm text-[#1F2937] group-hover/link:text-[#FF5500] group-hover/link:translate-x-0.5 transition-transform font-bold">
+                    →
+                  </span>
                 )}
               </a>
             ))}
