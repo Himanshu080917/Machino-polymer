@@ -8,7 +8,7 @@ export const GreenEarthSection: React.FC<{ onOpenSampleModal?: (grade?: string) 
       <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[580px] lg:min-h-[700px]">
         
         {/* Left Column: Dark Pine Typography & Content Panel */}
-        <div className="lg:col-span-5 bg-[#0E1F17] p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-7 sm:space-y-8 relative z-10">
+        <div className="lg:col-span-5 bg-[#0E1F17] p-6 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6 sm:space-y-8 relative z-10">
           
           {/* Eyebrow */}
           <div className="flex items-center gap-3 text-emerald-400 font-mono-tech text-xs sm:text-sm tracking-[0.2em] uppercase font-semibold">
@@ -17,7 +17,7 @@ export const GreenEarthSection: React.FC<{ onOpenSampleModal?: (grade?: string) 
           </div>
 
           {/* 4-Line Display Headline */}
-          <h2 className="text-4xl sm:text-5xl lg:text-[60px] font-display leading-[1.08] tracking-tight">
+          <h2 className="text-3xl sm:text-5xl lg:text-[60px] font-display leading-[1.08] tracking-tight">
             <div className="font-extrabold text-white">Circular</div>
             <div className="font-extrabold text-white">Engineering.</div>
             <div className="font-light text-[#64748B] mt-1">Engineered</div>
@@ -42,7 +42,7 @@ export const GreenEarthSection: React.FC<{ onOpenSampleModal?: (grade?: string) 
         </div>
 
         {/* Right Column: Full-bleed Forest Canopy & GRS Cards Artwork from Figma */}
-        <div className="lg:col-span-7 relative min-h-[440px] lg:min-h-[700px] overflow-hidden bg-[#0E1F17]">
+        <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[440px] lg:min-h-[700px] overflow-hidden bg-[#0E1F17]">
           <img
             src="/images/green-earth-graphic.jpg"
             alt="Machino Polymers Green Earth Circularity & GRS Certified Solutions"

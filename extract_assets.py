@@ -14,20 +14,17 @@ if os.path.exists(hero_path):
     img = Image.open(hero_path)
     w, h = img.size
     print(f"HeroSection size: {w}x{h}")
-    # 6 slides stacked vertically
-    slide_h = h / 6.0
-    slide_names = [
-        "hero-circular-future.jpg",
-        "hero-industry.jpg",
-        "hero-material.jpg",
-        "hero-engineering.jpg",
-        "hero-molecule.jpg",
-        "hero-application.jpg"
-    ]
-    for i, name in enumerate(slide_names):
-        top = int(i * slide_h)
-        bottom = int((i + 1) * slide_h)
-        cropped = img.crop((0, top, w, bottom))
+    # 6 slides stacked vertically with exact Figma artboard coordinates (1512x982 each)
+    hero_blocks = {
+        "hero-circular-future.jpg": (20, 1001),
+        "hero-industry.jpg": (1173, 2154),
+        "hero-material.jpg": (2326, 3307),
+        "hero-engineering.jpg": (3575, 4556),
+        "hero-molecule.jpg": (5014, 5995),
+        "hero-application.jpg": (6481, 7462)
+    }
+    for name, (y0, y1) in hero_blocks.items():
+        cropped = img.crop((20, y0, 1532, y1 + 1))
         out_file = os.path.join(output_dir, name)
         cropped.save(out_file, quality=95)
         print(f"Saved {name}: {cropped.size}")
@@ -65,13 +62,13 @@ if os.path.exists(home_path):
         ind_crop.save(os.path.join(output_dir, iname), quality=95)
         print(f"Saved {iname}")
 
-    # Crop Manufacturing floor wide banner (roughly y: 57.5% to 62.5%)
-    plant_crop = home_img.crop((0, int(hh * 0.575), hw, int(hh * 0.627)))
+    # Crop Manufacturing floor wide banner (exact y: 3813 to 4096, excluding duplicate stats above)
+    plant_crop = home_img.crop((0, 3813, hw, 4096))
     plant_crop.save(os.path.join(output_dir, "plant-production-floor.jpg"), quality=95)
     print("Saved plant-production-floor.jpg")
 
-    # Crop Quality Lab Scientist (roughly x: 54% to 96%, y: 64.5% to 70.8%)
-    lab_crop = home_img.crop((int(hw * 0.54), int(hh * 0.643), int(hw * 0.96), int(hh * 0.708)))
+    # Crop Quality Lab Scientist (exact x: 817 to 1447, y: 4179 to 4600)
+    lab_crop = home_img.crop((817, 4179, 1447, 4600))
     lab_crop.save(os.path.join(output_dir, "quality-lab-scientist.jpg"), quality=95)
     print("Saved quality-lab-scientist.jpg")
 

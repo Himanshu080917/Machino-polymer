@@ -27,14 +27,14 @@ export const QualityDisciplineSection: React.FC = () => {
   ];
 
   return (
-    <section id="quality" className="py-20 sm:py-28 bg-white text-[#0F172A] relative z-20 overflow-hidden">
-      <div className="w-full max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10 space-y-16 lg:space-y-20">
+    <section id="quality" className="py-14 sm:py-28 bg-white text-[#0F172A] relative z-20 overflow-hidden">
+      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-10 lg:px-16 relative z-10 space-y-12 sm:space-y-16 lg:space-y-20">
         
         {/* Top Split: Left Headline & Certifications, Right Lab Technician Image (Aspect Ratio 4/3) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           
           {/* Left Column: Eyebrow + 3-Line Headline + Certifications */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             <div className="text-[#FF5500] font-mono-tech uppercase text-xs sm:text-sm font-bold tracking-[0.2em]">
               QUALITY MANAGEMENT SYSTEMS
             </div>
@@ -45,11 +45,11 @@ export const QualityDisciplineSection: React.FC = () => {
               <div className="font-light text-[#94A3B8] mt-1">It&apos;s a discipline.</div>
             </h2>
 
-            <div className="pt-4 space-y-3">
+            <div className="pt-3 sm:pt-4 space-y-3">
               <div className="text-[#0F172A] font-mono-tech text-xs font-bold tracking-[0.15em] uppercase">
                 CERTIFICATIONS &amp; STANDARDS
               </div>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-[#475569]">
+              <ul className="space-y-2 text-xs sm:text-sm text-[#475569]">
                 {certs.map((c, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="text-[#94A3B8] mt-0.5">•</span>
@@ -62,13 +62,13 @@ export const QualityDisciplineSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Lab Technician in Cleanroom Gear (Aspect 4/3, rounded-2xl, object-cover) */}
+          {/* Right Column: Lab Technician in Cleanroom Gear */}
           <div className="lg:col-span-6">
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-100 aspect-4/3 bg-slate-100">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-100 aspect-[630/421] bg-slate-50">
               <img
                 src="/images/quality-lab-scientist.jpg"
                 alt="Person in cleanroom gear examining a sample at Machino Polymers lab"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-102"
               />
             </div>
           </div>
@@ -81,11 +81,11 @@ export const QualityDisciplineSection: React.FC = () => {
             QUALITY CONTROL PROCESS
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
             {qcSteps.map((step, idx) => (
               <div
                 key={idx}
-                className="p-8 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] space-y-4 flex flex-col justify-between hover:bg-white hover:shadow-md transition-all"
+                className="p-6 sm:p-8 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] space-y-4 flex flex-col justify-between hover:bg-white hover:shadow-md transition-all"
               >
                 <div className="text-3xl sm:text-4xl font-display font-black text-[#0F172A]">
                   {step.step}

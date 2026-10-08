@@ -17,9 +17,9 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4 space-y-5">
             <div className="space-y-3">
               <img
-                src="/images/logo/mpl-logo.svg"
+                src="/images/MPL LOGO.jpg"
                 alt="Machino Polymers Limited Logo"
-                className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-xl bg-white p-1"
               />
               <h3 className="text-white font-display font-black text-lg sm:text-xl tracking-tight">
                 Machino Polymers Limited

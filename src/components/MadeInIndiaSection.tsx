@@ -2,18 +2,18 @@ import React from 'react';
 
 export const MadeInIndiaSection: React.FC<{ onExploreStory?: () => void }> = ({ onExploreStory }) => {
   return (
-    <section id="about" className="py-20 sm:py-28 lg:py-32 bg-white text-[#0F172A] relative overflow-hidden">
+    <section id="about" className="py-14 sm:py-28 lg:py-32 bg-white text-[#0F172A] relative overflow-hidden">
       <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           
           {/* Left Column: Two-line Display Headline + Large Innovation Subtitle */}
-          <div className="lg:col-span-7 space-y-8">
-            <h2 className="text-4xl sm:text-5xl lg:text-[62px] font-display font-extrabold text-[#0F172A] leading-[1.08] tracking-tight">
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8">
+            <h2 className="text-3xl sm:text-5xl lg:text-[62px] font-display font-extrabold text-[#0F172A] leading-[1.08] tracking-tight">
               <div>Made in India,</div>
               <div className="mt-1">Respected worldwide!</div>
             </h2>
 
-            <p className="text-2xl sm:text-3xl lg:text-[34px] font-light text-[#64748B] leading-[1.28] max-w-2xl">
+            <p className="text-xl sm:text-3xl lg:text-[34px] font-light text-[#64748B] leading-[1.28] max-w-2xl">
               We are a global materials innovation company engineering the future of sustainable products.
             </p>
           </div>

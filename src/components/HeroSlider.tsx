@@ -84,6 +84,7 @@ const slides: Slide[] = [
 
 export const HeroSlider: React.FC = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
 
   // Auto-slide from right to left every 3 seconds
   useEffect(() => {
@@ -101,12 +102,28 @@ export const HeroSlider: React.FC = () => {
     setCurrentIdx((prev) => (prev + 1) % slides.length);
   };
 
-  const currentSlide = slides[currentIdx];
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+    if (diff > 50) {
+      handleNext();
+    } else if (diff < -50) {
+      handlePrev();
+    }
+    setTouchStart(null);
+  };
 
   return (
     <section
       id="hero"
-      className="relative w-full h-[calc(100vh-65px)] min-h-[640px] max-h-[940px] flex flex-col justify-between overflow-hidden bg-[#0A0E17]"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      className="relative w-full h-[calc(100vh-65px)] min-h-[560px] sm:min-h-[640px] max-h-[940px] flex flex-col justify-between overflow-hidden bg-[#0A0E17]"
     >
       {/* Horizontal Sliding Carousel Track (Slides smoothly from right to left) */}
       <div
@@ -119,7 +136,7 @@ export const HeroSlider: React.FC = () => {
         {slides.map((s) => (
           <div
             key={s.id}
-            className="relative h-full shrink-0"
+            className="relative h-full shrink-0 overflow-hidden"
             style={{ width: `${100 / slides.length}%` }}
           >
             <img
@@ -131,14 +148,14 @@ export const HeroSlider: React.FC = () => {
               }}
             />
             {/* Multi-stop cinematic dark gradient overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/85" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/70" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/60" />
           </div>
         ))}
       </div>
 
       {/* Top spacer for clean layout */}
-      <div className="relative z-10 w-full px-6 sm:px-10 lg:px-16 pt-8 sm:pt-10 pointer-events-none" />
+      <div className="relative z-10 w-full px-4 sm:px-10 lg:px-16 pt-4 sm:pt-10 pointer-events-none" />
 
       {/* Navigation Arrows for Manual Sliding */}
       <button
@@ -158,7 +175,7 @@ export const HeroSlider: React.FC = () => {
       </button>
 
       {/* Bottom Content Area */}
-      <div className="relative z-10 w-full px-4 sm:px-10 lg:px-16 pb-8 sm:pb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+      <div className="relative z-10 w-full px-4 sm:px-10 lg:px-16 pb-6 sm:pb-12 flex flex-col-reverse md:flex-row justify-between items-start md:items-end gap-4 sm:gap-6">
         
         {/* Left: Interactive 6-Stage Lifecycle Selector */}
         <div className="w-full md:w-auto bg-black/60 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 border border-white/10 shadow-2xl overflow-x-auto max-w-full">
@@ -191,29 +208,40 @@ export const HeroSlider: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Eyebrow + Two-line Headline + Subtext */}
-        <div
-          key={`content-${currentSlide.id}`}
-          className="max-w-xl text-left md:text-right space-y-2.5 transition-all duration-500 animate-fade-in ml-0 md:ml-auto"
-        >
-          {/* Eyebrow: Bright Orange uppercase letter-spaced text */}
-          <div className="text-[#FF5500] font-mono-tech tracking-[0.2em] text-xs font-bold uppercase drop-shadow-sm">
-            {currentSlide.eyebrow}
+        {/* Right: Smooth Vertical Scrolling Headline Track */}
+        <div className="w-full md:w-auto max-w-xl ml-0 md:ml-auto overflow-hidden h-[155px] sm:h-[185px] md:h-[205px]">
+          <div
+            className="flex flex-col h-full transition-transform duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform"
+            style={{
+              transform: `translateY(-${currentIdx * 100}%)`,
+            }}
+          >
+            {slides.map((s) => (
+              <div
+                key={s.id}
+                className="h-full shrink-0 flex flex-col justify-end text-left md:text-right space-y-1 sm:space-y-2 pb-0.5"
+              >
+                {/* Eyebrow: Bright Orange uppercase letter-spaced text */}
+                <div className="text-[#FF5500] font-mono-tech tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-xs font-bold uppercase drop-shadow-sm">
+                  {s.eyebrow}
+                </div>
+
+                {/* Large Two-line Headline: Crisp White Bold + Thin Italic Serif */}
+                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[44px] font-display text-white leading-[1.15] tracking-tight drop-shadow-md">
+                  <div>
+                    <span className="font-extrabold text-white">{s.headlinePart1} </span>
+                  </div>
+                  <div className="mt-0.5">
+                    <span className="font-light italic font-serif text-white/95">{s.headlinePart2}</span>
+                  </div>
+                </h2>
+
+                <p className="text-white/75 text-xs sm:text-sm max-w-md ml-0 md:ml-auto leading-relaxed">
+                  {s.subtext}
+                </p>
+              </div>
+            ))}
           </div>
-
-          {/* Large Two-line Headline: Crisp White Bold + Thin Italic Serif */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-display text-white leading-[1.18] tracking-tight drop-shadow-md">
-            <div>
-              <span className="font-extrabold text-white">{currentSlide.headlinePart1} </span>
-            </div>
-            <div className="mt-0.5">
-              <span className="font-light italic font-serif text-white/95">{currentSlide.headlinePart2}</span>
-            </div>
-          </h2>
-
-          <p className="text-white/75 text-xs sm:text-sm max-w-md ml-0 md:ml-auto leading-relaxed">
-            {currentSlide.subtext}
-          </p>
         </div>
 
       </div>

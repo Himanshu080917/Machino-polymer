@@ -33,11 +33,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCapabilities, onOpenContac
         {/* Left: Official MPL Logo Mark + Live Wordmark */}
         <a href="#hero" className="flex items-center gap-[clamp(12px,1.8vw,35px)] group focus:outline-none shrink-0">
           <img
-            src="/images/logo/mpl-logo.svg"
+            src="/images/MPL LOGO.jpg"
             alt="Machino Polymers Limited logo"
             width={120}
             height={95}
-            className="w-[clamp(56px,6.25vw,120px)] h-auto object-contain shrink-0"
+            className="w-[clamp(56px,6.25vw,120px)] h-auto object-contain shrink-0 mix-blend-multiply"
           />
           <span className="text-[#0B0F1A] font-semibold text-[clamp(16px,1.15vw,22px)] leading-[1.2] tracking-normal whitespace-nowrap">
             <span className="hidden sm:inline">Machino Polymers Limited</span>
@@ -110,17 +110,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCapabilities, onOpenContac
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#D8E6DE] bg-[#EDF4F0] px-6 py-5 space-y-3">
+        <div className="lg:hidden border-t border-[#D8E6DE] bg-[#EDF4F0] px-6 py-5 space-y-3 animate-in fade-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-semibold text-[#1F2937] hover:text-[#FF5500] flex items-center justify-between py-1"
+                onClick={(e) => handleLinkClick(e, link)}
+                className="text-base font-semibold text-[#1F2937] hover:text-[#FF5500] flex items-center justify-between py-1.5 cursor-pointer"
               >
                 <span>{link.label}</span>
-                {link.hasArrow && <ArrowUpRight className="w-4 h-4 text-[#1F2937]" />}
+                {link.hasArrow && <ArrowUpRight className="w-4 h-4 text-[#FF5500]" />}
               </a>
             ))}
           </nav>

@@ -98,8 +98,58 @@ export const IndustriesStrip: React.FC<{ onSelectIndustry?: (name: string) => vo
         </div>
       </div>
 
-      {/* 7 Interactive Columns: Click to Expand & Reveal Clear Image */}
-      <div className="w-full flex flex-col sm:flex-row h-[460px] sm:h-[540px] lg:h-[620px] border-t border-slate-200 overflow-hidden">
+      {/* Mobile Swipeable Track (< sm screens) */}
+      <div className="sm:hidden flex overflow-x-auto snap-x snap-mandatory gap-3.5 px-4 pb-6 pt-1 no-scrollbar">
+        {industryTiles.map((tile) => {
+          const isActive = activeId === tile.id;
+          return (
+            <div
+              key={tile.id}
+              onClick={() => handleToggle(tile.id, tile.name)}
+              className="relative rounded-2xl overflow-hidden shrink-0 w-[270px] h-[360px] snap-center shadow-lg border border-slate-200 cursor-pointer group"
+            >
+              <img
+                src={tile.image}
+                alt={tile.alt}
+                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10" />
+
+              {/* Top-Right Plus Icon */}
+              <div className="absolute top-4 right-4 z-10">
+                <div
+                  className={`w-7 h-7 rounded-full flex items-center justify-center transition-all ${
+                    isActive
+                      ? 'bg-[#FF5500] text-white rotate-45'
+                      : 'bg-black/40 text-white/90 backdrop-blur-xs'
+                  }`}
+                >
+                  <Plus className="w-4 h-4" />
+                </div>
+              </div>
+
+              {/* Bottom Details */}
+              <div className="absolute bottom-5 left-4 right-4 z-10 space-y-2">
+                <span className="inline-block text-[10px] font-mono-tech uppercase tracking-widest text-[#FF7A00] font-bold bg-black/70 px-2 py-0.5 rounded">
+                  {tile.name}
+                </span>
+                <p className="text-white text-xs font-medium line-clamp-2">
+                  {tile.tagline}
+                </p>
+                <div className="pt-1">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-mono-tech font-bold uppercase bg-[#FF5500] text-white shadow-md">
+                    <span>Explore Grades</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Desktop / Tablet Expanding Columns (>= sm screens) */}
+      <div className="hidden sm:flex flex-row h-[520px] lg:h-[620px] border-t border-slate-200 overflow-hidden">
         {industryTiles.map((tile) => {
           const isActive = activeId === tile.id;
           const isAnyActive = activeId !== null;
@@ -110,7 +160,7 @@ export const IndustriesStrip: React.FC<{ onSelectIndustry?: (name: string) => vo
               onClick={() => handleToggle(tile.id, tile.name)}
               className={`relative overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group ${
                 isActive
-                  ? 'flex-[2.5] sm:flex-[2.8]'
+                  ? 'flex-[2.8]'
                   : isAnyActive
                   ? 'flex-[0.8] opacity-85'
                   : 'flex-1 hover:flex-[1.25]'

@@ -68,11 +68,7 @@ export function App() {
         />
 
         {/* 6. Industries We Empower (7-Card Vertical Accordion) */}
-        <IndustriesStrip
-          onSelectIndustry={() => {
-            handleExploreMaterials();
-          }}
-        />
+        <IndustriesStrip />
 
         {/* 7. Manufacturing Excellence (Precision at Industrial Scale) */}
         <ManufacturingTechSection />

@@ -26,18 +26,18 @@ export const ManufacturingTechSection: React.FC = () => {
   ];
 
   return (
-    <section id="manufacturing" className="w-full bg-white text-[#0F172A] pt-20 sm:pt-24 pb-16 sm:pb-20">
+    <section id="manufacturing" className="w-full bg-white text-[#0F172A] pt-14 sm:pt-20 pb-12 sm:pb-16">
       <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Two-Column Header matching Figma */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-10 lg:mb-16">
           
           {/* Left Column: Green Eyebrow + 2-Line Bold Heading */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-3 sm:space-y-4">
             <div className="text-[#10B981] font-mono-tech uppercase text-xs sm:text-sm font-bold tracking-[0.2em]">
               MANUFACTURING TECHNOLOGIES
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-display font-black text-[#0F172A] leading-[1.08] tracking-tight">
+            <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-display font-black text-[#0F172A] leading-[1.08] tracking-tight">
               <div>Precision at</div>
               <div className="mt-1">industrial scale.</div>
             </h2>
@@ -45,22 +45,22 @@ export const ManufacturingTechSection: React.FC = () => {
 
           {/* Right Column: Narrative Paragraph */}
           <div className="lg:col-span-7 pt-1 lg:pt-3">
-            <p className="text-[#475569] text-base lg:text-[17px] leading-[1.7] max-w-2xl">
+            <p className="text-[#475569] text-sm sm:text-base lg:text-[17px] leading-[1.7] max-w-2xl">
               State-of-the-art compounding lines powered by advanced automation ensure consistent quality, precision, and complete batch traceability across every production run. Equipped with co-rotating twin-screw extruders, gravimetric feeding systems, and both underwater and strand pelletizing technologies, our facilities deliver reliable, high-performance polymer compounds at scale.
             </p>
           </div>
 
         </div>
 
-        {/* 3-Column White Stats Card with Divider Borders */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border border-[#E2E8F0] rounded-xl divide-y md:divide-y-0 md:divide-x divide-[#E2E8F0] bg-white shadow-xs">
+        {/* 3-Column Stats Card matching Figma */}
+        <div className="grid grid-cols-1 md:grid-cols-3 border border-[#E2E8F0] rounded-none divide-y md:divide-y-0 md:divide-x divide-[#E2E8F0] bg-white shadow-xs">
           {stats.map((item, idx) => (
             <div
               key={idx}
-              className="p-8 sm:p-10 lg:p-12 space-y-4 flex flex-col justify-between hover:bg-[#F8FAF9] transition-colors"
+              className="p-6 sm:p-10 lg:p-12 space-y-3 sm:space-y-4 flex flex-col justify-between hover:bg-[#FAFAFA] transition-colors"
             >
               {/* Top Monospace Tracking ID */}
-              <div className="font-mono-tech text-xs text-[#94A3B8] tracking-wider">
+              <div className="font-mono-tech text-xs text-[#CBD5E1] tracking-wider">
                 {item.trackingId}
               </div>
 
