@@ -7,6 +7,7 @@ interface Slide {
   topWord: string;
   image: string;
   imagePosition?: string;
+  mobilePosition?: string;
   eyebrow: string;
   headlinePart1: string;
   headlinePart2: string;
@@ -20,6 +21,7 @@ const slides: Slide[] = [
     topWord: 'MATERIAL',
     image: '/images/hero-material.jpg',
     imagePosition: 'center center',
+    mobilePosition: '80% center',
     eyebrow: 'PRIME & CIRCULAR RESIN FOUNDATION',
     headlinePart1: 'Engineered from the Base.',
     headlinePart2: 'Uncompromising Quality.',
@@ -31,6 +33,7 @@ const slides: Slide[] = [
     topWord: 'MOLECULE',
     image: '/images/hero-molecule.jpg',
     imagePosition: 'center center',
+    mobilePosition: '80% center',
     eyebrow: 'REACTIVE COMPATIBILIZATION & NANO-FILLERS',
     headlinePart1: 'Precision at the',
     headlinePart2: 'Molecular Scale.',
@@ -42,6 +45,7 @@ const slides: Slide[] = [
     topWord: 'ENGINEERING',
     image: '/images/hero-engineering.jpg',
     imagePosition: 'center center',
+    mobilePosition: '84% center',
     eyebrow: 'ADVANCED MATERIALS & CIRCULAR ENGINEERING',
     headlinePart1: 'Engineering Better Materials.',
     headlinePart2: 'Enabling Better Futures.',
@@ -53,6 +57,7 @@ const slides: Slide[] = [
     topWord: 'APPLICATION',
     image: '/images/hero-application.jpg',
     imagePosition: 'center center',
+    mobilePosition: '78% center',
     eyebrow: 'CRITICAL COMPONENT PERFORMANCE',
     headlinePart1: 'Designed for the Toughest',
     headlinePart2: 'Operating Conditions.',
@@ -64,6 +69,7 @@ const slides: Slide[] = [
     topWord: 'INDUSTRY',
     image: '/images/hero-industry.jpg',
     imagePosition: 'center center',
+    mobilePosition: '80% center',
     eyebrow: 'EMPOWERING GLOBAL OEMS & TIER-1S',
     headlinePart1: 'Accelerating Industry',
     headlinePart2: 'Transformation.',
@@ -75,6 +81,7 @@ const slides: Slide[] = [
     topWord: 'CIRCULAR FUTURE',
     image: '/images/hero-circular-future.jpg',
     imagePosition: 'center center',
+    mobilePosition: '90% center',
     eyebrow: 'CLOSED-LOOP CIRCULAR RECOVERY',
     headlinePart1: 'Closing the Loop for a',
     headlinePart2: 'Sustainable Tomorrow.',
@@ -142,10 +149,13 @@ export const HeroSlider: React.FC = () => {
             <img
               src={s.image}
               alt={s.topWord}
-              className="w-full h-full object-cover"
-              style={{
-                objectPosition: s.imagePosition || 'center center',
-              }}
+              className="w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-desktop)]"
+              style={
+                {
+                  '--pos-mobile': s.mobilePosition || '80% center',
+                  '--pos-desktop': s.imagePosition || 'center center',
+                } as React.CSSProperties
+              }
             />
             {/* Multi-stop cinematic dark gradient overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/80" />
