@@ -9,16 +9,16 @@ export const MiracRDSection: React.FC = () => {
       id="mirac"
       className="stacked-panel-mirac relative w-full min-h-[calc(100vh-var(--navbar-height))] text-white flex flex-col justify-between overflow-hidden"
     >
-      {/* 1. Full-bleed Background Photo from Image.jpg */}
+      {/* 1. Full-bleed Raw Laboratory Photo (No baked text) */}
       <img
-        src="/images/Image.jpg"
+        src="/images/mirac-lab.jpg"
         alt="MIRAC Laboratory at Machino Polymers"
         className="absolute inset-0 w-full h-full object-cover object-[center_right] lg:object-[right_center] pointer-events-none"
       />
 
       {/* 2. Split Overlays */}
-      {/* Left Half: Flat semi-transparent dark slate panel rgba(24, 28, 34, 0.88) with hard 50% split on >=1024px */}
-      <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-[#181C22]/90 lg:bg-[#181C22]/88 z-0 pointer-events-none" />
+      {/* Left Half: Flat solid dark slate panel (#181C22) with hard 50% split on >=1024px to ensure zero ghosting/reflection */}
+      <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-[#181C22] z-0 pointer-events-none" />
 
       {/* Right Half: Subtle light dark tint ~rgba(0,0,0,0.35) so lab woman and green tubes show through cleanly */}
       <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-black/35 z-0 pointer-events-none" />
