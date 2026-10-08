@@ -8,7 +8,7 @@ interface FutureMaterialsCTAProps {
 
 export const FutureMaterialsCTA: React.FC<FutureMaterialsCTAProps> = ({ onOpenContact }) => {
   return (
-    <section id="future-materials" className="relative w-full min-h-[580px] lg:min-h-[640px] flex items-center bg-[#070D18] overflow-hidden">
+    <section id="future-materials" className="relative z-20 w-full min-h-[580px] lg:min-h-[640px] flex items-center bg-[#070D18] overflow-hidden">
       
       {/* High-Clarity Background Image of Hand Holding Polymer Pellets on the Right */}
       <img

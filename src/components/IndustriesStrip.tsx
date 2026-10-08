@@ -1,143 +1,182 @@
 import React, { useState } from 'react';
-import { Plus } from 'lucide-react';
+import { Plus, ArrowRight } from 'lucide-react';
 
 interface IndustryTile {
   id: string;
   name: string;
   image: string;
   alt: string;
+  tagline: string;
 }
 
 const industryTiles: IndustryTile[] = [
   {
     id: 'automotive',
     name: 'Automotive',
-    image: '/images/industry-automotive.jpg',
-    alt: 'Automotive manufacturing and components',
+    image: '/images/ind_col_0_automotive.jpg',
+    alt: 'Automotive lightweighting and structural components',
+    tagline: 'Under-the-hood, interior aesthetics, and crash zones',
   },
   {
     id: 'electrical',
     name: 'Electrical & Electronics',
-    image: '/images/industry-electrical.jpg',
-    alt: 'Electrical switchgear and electronics',
+    image: '/images/ind_col_1_electrical.jpg',
+    alt: 'Electrical switchgear, enclosures, and flame retardant modules',
+    tagline: 'UL94 V-0 flame retardant & high CTI compounds',
   },
   {
     id: 'industrial',
     name: 'Industrial Applications',
-    image: '/images/industry-industrial.jpg',
-    alt: 'Industrial laser cutting and sparks',
+    image: '/images/ind_col_2_industrial.jpg',
+    alt: 'Industrial machinery, high-torque gears, and heavy duty components',
+    tagline: 'High impact, chemical & abrasion resistant polymers',
   },
   {
     id: 'consumer',
     name: 'Consumer Goods',
-    image: '/images/industry-consumer.jpg',
-    alt: 'Consumer lifestyle products and shopping cart',
+    image: '/images/ind_col_3_consumer.jpg',
+    alt: 'Consumer lifestyle, retail, and durable goods',
+    tagline: 'Scratch-resistant & food-contact compliant resins',
   },
   {
     id: 'appliances',
     name: 'Appliances',
-    image: '/images/industry-appliances.jpg',
-    alt: 'Home appliances and white air fryer',
+    image: '/images/ind_col_4_appliances.jpg',
+    alt: 'Home & commercial appliances with premium aesthetic finish',
+    tagline: 'High gloss, heat resistance & dimensional stability',
   },
   {
     id: 'hygiene-medical',
     name: 'Hygiene & Medical',
-    image: '/images/industry-medical.jpg',
-    alt: 'Medical devices, tweezers and mask on teal',
+    image: '/images/ind_col_5_medical.jpg',
+    alt: 'Medical devices, healthcare components, and hygiene solutions',
+    tagline: 'USP Class VI & biocompatible polymer compounds',
   },
   {
     id: 'packaging',
     name: 'Packaging',
-    image: '/images/industry-packaging.jpg',
-    alt: 'Sustainable plastic packaging bottle',
+    image: '/images/ind_col_6_packaging.jpg',
+    alt: 'Circular and lightweight sustainable packaging solutions',
+    tagline: 'High barrier, thin-wall injection & GRS-certified PCR',
   },
 ];
 
 export const IndustriesStrip: React.FC<{ onSelectIndustry?: (name: string) => void }> = ({
   onSelectIndustry,
 }) => {
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  const handleToggle = (id: string, name: string) => {
+    if (activeId === id) {
+      setActiveId(null);
+    } else {
+      setActiveId(id);
+    }
+    if (onSelectIndustry) {
+      onSelectIndustry(name);
+    }
+  };
 
   return (
-    <section id="industries" className="w-full bg-white text-[#0F172A] pt-20 pb-0 overflow-hidden border-b border-[#E2E8F0]">
+    <section id="industries" className="w-full bg-white text-[#0F172A] pt-16 sm:pt-20 pb-0 overflow-hidden">
       
-      {/* Top Header */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 mb-12">
-        <div className="space-y-3">
-          
-          {/* Eyebrow with orange horizontal bar beneath */}
-          <div className="inline-block">
-            <span className="text-[#FF5500] font-mono-tech uppercase text-xs sm:text-sm font-bold tracking-[0.2em]">
-              Industries We Empower
-            </span>
-            <div className="w-12 h-1 bg-[#FF5500] mt-1.5" />
+      {/* Header matching Figma */}
+      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12 mb-10">
+        <div className="space-y-2">
+          {/* Eyebrow */}
+          <div className="text-[#0F172A] font-sans font-semibold text-sm sm:text-base tracking-wide">
+            Industries We Empower
           </div>
 
-          {/* Large Bold Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-[#0F172A] leading-tight tracking-tight">
-            Where Sustainable Materials Meet Real <span className="text-[#FF5500]">Applications</span>
+          {/* Large Title */}
+          <h2 className="text-3xl sm:text-4xl lg:text-[48px] font-display font-black text-[#0F172A] leading-tight tracking-tight">
+            Where Sustainable Materials Meet Real <span className="text-[#FF7A00] font-normal">Applications</span>
           </h2>
+
+          {/* Thick Orange Bar below 'Where' */}
+          <div className="w-12 h-1.5 bg-[#FF5500] rounded-xs pt-0.5 mt-3" />
         </div>
       </div>
 
-      {/* Full-width, edge-to-edge 7 equal-width horizontal columns with vivid background images */}
-      <div className="w-full grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-0 border-t border-[#E2E8F0]">
+      {/* 7 Interactive Columns: Click to Expand & Reveal Clear Image */}
+      <div className="w-full flex flex-col sm:flex-row h-[460px] sm:h-[540px] lg:h-[620px] border-t border-slate-200 overflow-hidden">
         {industryTiles.map((tile) => {
-          const isHovered = hoveredId === tile.id;
+          const isActive = activeId === tile.id;
+          const isAnyActive = activeId !== null;
+
           return (
             <div
               key={tile.id}
-              onMouseEnter={() => setHoveredId(tile.id)}
-              onMouseLeave={() => setHoveredId(null)}
-              onClick={() => onSelectIndustry?.(tile.name)}
-              className="relative h-[360px] sm:h-[440px] lg:h-[500px] overflow-hidden cursor-pointer group bg-slate-100"
+              onClick={() => handleToggle(tile.id, tile.name)}
+              className={`relative overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group ${
+                isActive
+                  ? 'flex-[2.5] sm:flex-[2.8]'
+                  : isAnyActive
+                  ? 'flex-[0.8] opacity-85'
+                  : 'flex-1 hover:flex-[1.25]'
+              }`}
             >
-              {/* High-quality background image matching Figma */}
+              {/* High-Resolution Clean Image */}
               <img
                 src={tile.image}
                 alt={tile.alt}
-                className={`w-full h-full object-cover object-center transition-transform duration-700 ease-out ${
-                  isHovered ? 'scale-108' : 'scale-100'
+                className={`w-full h-full object-cover object-center transition-all duration-700 ${
+                  isActive
+                    ? 'scale-105 brightness-110 contrast-105'
+                    : 'scale-100 group-hover:scale-105 group-hover:brightness-105'
                 }`}
               />
 
-              {/* Subtle top & bottom gradient for text contrast while preserving image brightness */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/35 group-hover:from-black/35 group-hover:to-black/50 transition-all duration-300" />
+              {/* Dynamic Gradient Overlay: Becomes crystal clear when active/clicked */}
+              <div
+                className={`absolute inset-0 transition-opacity duration-500 ${
+                  isActive
+                    ? 'bg-gradient-to-t from-black/80 via-transparent to-black/10'
+                    : 'bg-gradient-to-t from-black/60 via-transparent to-black/20 group-hover:opacity-75'
+                }`}
+              />
 
-              {/* Top-Right: "+" Icon */}
-              <div className="absolute top-5 right-5 z-10">
+              {/* Top-Right: Interactive Plus / Active Indicator */}
+              <div className="absolute top-5 right-4 sm:right-5 z-20">
                 <div
-                  className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    isHovered
-                      ? 'bg-[#FF5500] text-white rotate-45 scale-110 shadow-md'
-                      : 'text-white/90 hover:text-white'
+                  className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    isActive
+                      ? 'bg-[#FF5500] text-white rotate-45 shadow-lg shadow-[#FF5500]/40 scale-110'
+                      : 'bg-black/30 backdrop-blur-xs text-white/90 group-hover:bg-white/20 group-hover:text-white'
                   }`}
                 >
-                  <Plus className="w-5 h-5 drop-shadow" />
+                  <Plus className="w-4 h-4" />
                 </div>
               </div>
 
-              {/* Upper-Left: Bold Title */}
-              <div className="absolute top-6 left-5 right-8 z-10">
-                <h3 className="font-display font-extrabold text-white text-lg sm:text-xl lg:text-[22px] leading-tight tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                  {tile.name}
-                </h3>
-              </div>
+              {/* Bottom Card / Title Area */}
+              <div className="absolute bottom-6 left-4 right-4 sm:left-5 sm:right-5 z-20">
+                {/* Tagline revealed when active/expanded */}
+                {isActive && (
+                  <div className="animate-fade-in mb-3 space-y-1">
+                    <span className="inline-block text-[10px] font-mono-tech uppercase tracking-widest text-[#FF7A00] font-bold bg-black/70 px-2 py-0.5 rounded">
+                      Featured Solution
+                    </span>
+                    <p className="text-white/90 text-xs sm:text-sm font-medium drop-shadow-md">
+                      {tile.tagline}
+                    </p>
+                  </div>
+                )}
 
-              {/* Bottom interactive action reveal on hover */}
-              <div className="absolute bottom-5 left-5 right-5 z-10">
-                <span
-                  className={`text-xs font-mono-tech text-white font-bold uppercase tracking-wider block bg-black/60 backdrop-blur-xs px-3 py-1.5 rounded-sm border border-white/20 transition-all duration-300 ${
-                    isHovered
-                      ? 'opacity-100 translate-y-0 shadow-lg'
-                      : 'opacity-0 translate-y-2 pointer-events-none'
+                {/* Explore Grades Pill */}
+                <div
+                  className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono-tech font-bold uppercase transition-all duration-300 ${
+                    isActive
+                      ? 'bg-[#FF5500] text-white shadow-lg shadow-[#FF5500]/30 translate-y-0'
+                      : 'bg-black/60 text-white/90 backdrop-blur-md opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0'
                   }`}
                 >
-                  Explore Grades →
-                </span>
+                  <span>Explore Grades</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
               </div>
 
-              {/* Right border divider between columns */}
+              {/* Vertical Column Divider Line */}
               <div className="absolute top-0 right-0 bottom-0 w-[1px] bg-white/20 pointer-events-none" />
             </div>
           );

@@ -3,21 +3,21 @@ import React from 'react';
 export const ManufacturingTechSection: React.FC = () => {
   const stats = [
     {
-      trackingId: 'strategic_plants_01',
+      trackingId: 'strategic_plants.01',
       number: '4',
       unit: 'PLANTS',
       label: 'STRATEGIC PLANTS',
       desc: 'Located near major industrial hubs like Gurugram, Gujarat, Chennai and the UAE.',
     },
     {
-      trackingId: 'annual_capacity_01',
+      trackingId: 'annual_capacity.01',
       number: '150,000',
       unit: 'MT',
       label: 'ANNUAL CAPACITY',
       desc: 'High-volume throughput supporting OEM supply chain requirements at scale.',
     },
     {
-      trackingId: 'trusted_partners_01',
+      trackingId: 'trusted_partners.01',
       number: '40+',
       unit: 'OEMS',
       label: 'TRUSTED PARTNERS',
@@ -26,47 +26,47 @@ export const ManufacturingTechSection: React.FC = () => {
   ];
 
   return (
-    <section id="manufacturing" className="w-full bg-white text-[#111827] py-20 lg:py-28 border-b border-[#E5E7EB]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+    <section id="manufacturing" className="w-full bg-white text-[#0F172A] pt-20 sm:pt-24 pb-16 sm:pb-20">
+      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Two-Column Header matching Figma */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14 lg:mb-16">
           
-          {/* Left Column: Eyebrow + Bold Heading */}
+          {/* Left Column: Green Eyebrow + 2-Line Bold Heading */}
           <div className="lg:col-span-5 space-y-4">
             <div className="text-[#10B981] font-mono-tech uppercase text-xs sm:text-sm font-bold tracking-[0.2em]">
               MANUFACTURING TECHNOLOGIES
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-[#111827] leading-[1.08] tracking-tight">
-              Precision at <br />
-              industrial scale.
+            <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-display font-black text-[#0F172A] leading-[1.08] tracking-tight">
+              <div>Precision at</div>
+              <div className="mt-1">industrial scale.</div>
             </h2>
           </div>
 
           {/* Right Column: Narrative Paragraph */}
-          <div className="lg:col-span-7 pt-2">
-            <p className="text-[#4B5563] text-sm sm:text-base lg:text-[17px] leading-relaxed">
+          <div className="lg:col-span-7 pt-1 lg:pt-3">
+            <p className="text-[#475569] text-base lg:text-[17px] leading-[1.7] max-w-2xl">
               State-of-the-art compounding lines powered by advanced automation ensure consistent quality, precision, and complete batch traceability across every production run. Equipped with co-rotating twin-screw extruders, gravimetric feeding systems, and both underwater and strand pelletizing technologies, our facilities deliver reliable, high-performance polymer compounds at scale.
             </p>
           </div>
 
         </div>
 
-        {/* 3-Column Stats Grid with Light Border and Monospace Tracking IDs */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#E5E7EB] rounded-lg divide-y md:divide-y-0 md:divide-x divide-[#E5E7EB] bg-white">
+        {/* 3-Column White Stats Card with Divider Borders */}
+        <div className="grid grid-cols-1 md:grid-cols-3 border border-[#E2E8F0] rounded-xl divide-y md:divide-y-0 md:divide-x divide-[#E2E8F0] bg-white shadow-xs">
           {stats.map((item, idx) => (
             <div
               key={idx}
-              className="p-8 sm:p-10 lg:p-12 space-y-4 flex flex-col justify-between hover:bg-[#F9FAFB] transition-colors"
+              className="p-8 sm:p-10 lg:p-12 space-y-4 flex flex-col justify-between hover:bg-[#F8FAF9] transition-colors"
             >
               {/* Top Monospace Tracking ID */}
-              <div className="font-mono-tech text-xs text-[#9CA3AF] tracking-wider">
+              <div className="font-mono-tech text-xs text-[#94A3B8] tracking-wider">
                 {item.trackingId}
               </div>
 
               {/* Number and Orange Unit */}
-              <div className="flex items-baseline gap-2 pt-2">
-                <span className="text-5xl sm:text-6xl font-display font-black text-[#111827] tracking-tight">
+              <div className="flex items-baseline gap-2.5 pt-2">
+                <span className="text-5xl sm:text-6xl lg:text-[58px] font-display font-black text-[#0F172A] tracking-tight">
                   {item.number}
                 </span>
                 <span className="text-xs sm:text-sm font-mono-tech font-bold uppercase tracking-wider text-[#FF5500]">
@@ -75,12 +75,12 @@ export const ManufacturingTechSection: React.FC = () => {
               </div>
 
               {/* Black Label */}
-              <div className="text-xs sm:text-sm font-display font-extrabold uppercase tracking-wider text-[#111827]">
+              <div className="text-xs sm:text-sm font-display font-extrabold uppercase tracking-wider text-[#0F172A]">
                 {item.label}
               </div>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed pt-1">
+              <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed pt-1">
                 {item.desc}
               </p>
             </div>

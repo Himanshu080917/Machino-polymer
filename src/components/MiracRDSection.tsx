@@ -1,107 +1,91 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Award, Microscope } from 'lucide-react';
+import { Microscope } from 'lucide-react';
 
 export const MiracRDSection: React.FC = () => {
   const [showEquipment, setShowEquipment] = useState(false);
 
   return (
-    <section id="mirac" className="relative w-full overflow-hidden bg-[#0A0E17] text-white">
-      
-      {/* Full-bleed Laboratory Background Photo */}
-      <div className="relative min-h-[640px] lg:min-h-[720px] flex items-center py-20 lg:py-24">
-        
-        {/* Background Image */}
-        <img
-          src="/images/mirac-lab.jpg"
-          alt="MIRAC Research & Application Laboratory Scientist"
-          className="absolute inset-0 w-full h-full object-cover object-[center_25%] brightness-[0.55] contrast-110"
-        />
+    <section
+      id="mirac"
+      className="stacked-panel-mirac relative w-full min-h-[calc(100vh-var(--navbar-height))] text-white flex flex-col justify-between overflow-hidden"
+    >
+      {/* 1. Full-bleed Background Photo from Image.jpg */}
+      <img
+        src="/images/Image.jpg"
+        alt="MIRAC Laboratory at Machino Polymers"
+        className="absolute inset-0 w-full h-full object-cover object-[center_right] lg:object-[right_center] pointer-events-none"
+      />
 
-        {/* Multi-stop Gradient Overlay for Crisp Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
+      {/* 2. Split Overlays */}
+      {/* Left Half: Flat semi-transparent dark slate panel rgba(24, 28, 34, 0.88) with hard 50% split on >=1024px */}
+      <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-[#181C22]/90 lg:bg-[#181C22]/88 z-0 pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 relative z-10 w-full">
-          <div className="max-w-2xl space-y-6">
+      {/* Right Half: Subtle light dark tint ~rgba(0,0,0,0.35) so lab woman and green tubes show through cleanly */}
+      <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-black/35 z-0 pointer-events-none" />
+
+      {/* 3. Main Content Container (Left Half) */}
+      <div className="relative z-10 w-full lg:w-1/2 flex flex-col justify-center pt-8 sm:pt-10 lg:pt-12 pb-10 sm:pb-12 pl-[clamp(24px,8.4vw,162px)] pr-[clamp(24px,4vw,60px)]">
+        <div className="max-w-[680px] text-left">
+          
+          {/* H2 Title (No eyebrow in Figma) */}
+          <h2 className="text-white font-display font-extrabold tracking-[-0.02em] leading-[1.14] text-[clamp(40px,4.15vw,80px)]">
+            <span className="block">Innovation at the</span>
+            <span className="block">molecular level.</span>
+          </h2>
+
+          {/* Body Text (Muted grey rgba(255,255,255,0.65), wrapping at ~680px) */}
+          <div className="mt-8 sm:mt-11 space-y-2.5 text-white/65 text-[clamp(16px,1.15vw,22px)] leading-[1.6] font-normal">
+            <p>
+              Machino Innovative Research and Application Center (MIRAC), the in house R&amp;D unit of MPL is accredited by Department of Scientific and Industrial Research under Ministry of Science and Technology, Govt. of India. MIRAC is accredited by NABL and also possesses the ISO/ IEC 17025 certification.
+            </p>
+            <p>
+              MIRAC&apos;s strength lies in its skilled &amp; qualified polymer scientists and engineers who always strive in developing innovative products in its state-of-the-art R&amp;D laboratory
+            </p>
+          </div>
+
+          {/* Explore MIRAC Pill Button */}
+          <div className="mt-7 sm:mt-9">
+            <button
+              onClick={() => setShowEquipment(!showEquipment)}
+              className="inline-flex items-center justify-center rounded-full bg-[#1F2D52] hover:bg-[#27386A] text-white border border-white/15 text-[clamp(16px,1.1vw,22px)] font-semibold tracking-wide transition-all duration-200 shadow-xl hover:-translate-y-0.5 min-h-[56px] sm:min-h-[64px] px-8 sm:px-10 cursor-pointer focus-visible:outline-2 focus-visible:outline-white/50 w-full sm:w-auto"
+            >
+              <span>{showEquipment ? 'Hide Equipment Suite' : 'Explore MIRAC'}</span>
+            </button>
+          </div>
+
+          {/* Accreditation Badges Row (Below Button, aligned left, gap ~65px, height auto, no clipping) */}
+          <div className="mt-7 sm:mt-9 flex items-center gap-[clamp(32px,3.4vw,65px)]">
             
-            {/* Eyebrow */}
-            <div className="text-[#FF5500] font-mono-tech uppercase text-xs sm:text-sm font-bold tracking-[0.25em]">
-              MIRAC
+            {/* DSIR Seal (~220px at 1920px) */}
+            <div className="w-[clamp(120px,11.5vw,220px)] h-[clamp(120px,11.5vw,220px)] shrink-0">
+              <img
+                src="/images/badges/dsir.svg"
+                alt="DSIR recognised in-house R&D unit"
+                className="w-full h-full object-contain opacity-60 hover:opacity-85 transition-opacity duration-200"
+              />
             </div>
 
-            {/* Main Headline */}
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-[1.08] tracking-tight">
-              Innovation at the <br />
-              molecular level.
-            </h2>
-
-            {/* Narrative Paragraphs */}
-            <div className="space-y-4 text-white/80 text-sm sm:text-base leading-relaxed font-normal">
-              <p>
-                Machino Innovative Research and Application Center (MIRAC), the in house R&amp;D unit of MPL is accredited by Department of Scientific and Industrial Research under Ministry of Science and Technology, Govt. of India. MIRAC is accredited by NABL and also possesses the ISO/ IEC 17025 certification.
-              </p>
-              <p className="text-white/70">
-                MIRAC&apos;s strength lies in its skilled &amp; qualified polymer scientists and engineers who always strive in developing innovative products in its state-of-the-art R&amp;D laboratory.
-              </p>
-            </div>
-
-            {/* Explore Button */}
-            <div className="pt-2">
-              <button
-                onClick={() => setShowEquipment(!showEquipment)}
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#1E293B]/90 hover:bg-[#334155] text-white border border-white/20 text-sm font-bold tracking-wide transition-all shadow-lg hover:scale-105 cursor-pointer"
-              >
-                <span>{showEquipment ? 'Hide Equipment Suite' : 'Explore MIRAC'}</span>
-              </button>
-            </div>
-
-            {/* DSIR and NABL Accreditation Badges at bottom left */}
-            <div className="flex items-center gap-6 pt-6 border-t border-white/15">
-              
-              {/* DSIR Seal */}
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-black/40 backdrop-blur-md border border-white/10">
-                <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/90">
-                  <Award className="w-5 h-5 text-[#FF5500]" />
-                </div>
-                <div className="text-left">
-                  <div className="text-[11px] font-mono-tech font-bold text-white uppercase tracking-wider">
-                    DSIR RECOGNIZED
-                  </div>
-                  <div className="text-[9px] text-white/60 uppercase tracking-widest">
-                    GOVT. OF INDIA R&amp;D
-                  </div>
-                </div>
-              </div>
-
-              {/* NABL Seal */}
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-black/40 backdrop-blur-md border border-white/10">
-                <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white/90">
-                  <ShieldCheck className="w-5 h-5 text-emerald-400" />
-                </div>
-                <div className="text-left">
-                  <div className="text-[11px] font-mono-tech font-bold text-white uppercase tracking-wider">
-                    NABL ACCREDITED
-                  </div>
-                  <div className="text-[9px] text-white/60 uppercase tracking-widest">
-                    ISO/IEC 17025 CERTIFIED
-                  </div>
-                </div>
-              </div>
-
+            {/* NABL Seal (~155px at 1920px, height: auto, full wordmark visible) */}
+            <div className="w-[clamp(90px,8vw,155px)] shrink-0">
+              <img
+                src="/images/badges/nabl.svg"
+                alt="NABL accredited laboratory"
+                className="w-full h-auto object-contain opacity-60 hover:opacity-85 transition-opacity duration-200"
+              />
             </div>
 
           </div>
-        </div>
 
+        </div>
       </div>
 
       {/* Expandable Equipment Suite Section */}
       {showEquipment && (
-        <div className="bg-[#070B14] py-16 px-6 sm:px-10 lg:px-12 border-t border-white/10 animate-fade-in">
-          <div className="max-w-7xl mx-auto space-y-8">
+        <div className="relative z-20 bg-[#0E131A] py-14 px-6 sm:px-10 lg:px-16 border-t border-white/10 animate-fade-in">
+          <div className="w-full max-w-[1520px] mx-auto space-y-8">
             <div className="flex items-center gap-3">
               <Microscope className="w-6 h-6 text-[#FF5500]" />
-              <h3 className="text-2xl font-display font-bold text-white">
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-white">
                 NABL Accredited Polymer Testing &amp; Characterization Equipment
               </h3>
             </div>
@@ -134,3 +118,4 @@ export const MiracRDSection: React.FC = () => {
     </section>
   );
 };
+

@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full bg-[#070B14] text-[#9CA3AF] border-t border-white/10 pt-20 pb-12">
+    <footer className="relative z-40 w-full bg-[#070B14] text-[#9CA3AF] border-t border-white/10 pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         
         {/* Main 4-Column Grid matching Figma */}
@@ -17,9 +17,9 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-4 space-y-5">
             <div className="space-y-3">
               <img
-                src="/icons/logo-mpl.svg"
+                src="/images/logo/mpl-logo.svg"
                 alt="Machino Polymers Limited Logo"
-                className="w-16 h-16 sm:w-20 sm:h-20"
+                className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
               />
               <h3 className="text-white font-display font-black text-lg sm:text-xl tracking-tight">
                 Machino Polymers Limited

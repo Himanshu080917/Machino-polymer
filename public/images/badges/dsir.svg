@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <!-- Outer Double Rings -->
+  <circle cx="120" cy="120" r="114" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.95"/>
+  <circle cx="120" cy="120" r="105" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="120" cy="120" r="68" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.7"/>
+  
+  <!-- Curved Upper Text: DEPARTMENT OF SCIENTIFIC & INDUSTRIAL RESEARCH -->
+  <path id="dsirTopTextPath" d="M 26,120 A 94,94 0 1,1 214,120" fill="none" />
+  <text font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" font-weight="800" fill="#FFFFFF" letter-spacing="1.2">
+    <textPath href="#dsirTopTextPath" startOffset="50%" text-anchor="middle">
+      DEPARTMENT OF SCIENTIFIC &amp; INDUSTRIAL RESEARCH
+    </textPath>
+  </text>
+  
+  <!-- Curved Lower Text: GOVT. OF INDIA -->
+  <path id="dsirBotTextPath" d="M 214,120 A 94,94 0 0,1 26,120" fill="none" />
+  <text font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="800" fill="#FFFFFF" letter-spacing="2">
+    <textPath href="#dsirBotTextPath" startOffset="50%" text-anchor="middle">
+      ★ GOVT. OF INDIA ★
+    </textPath>
+  </text>
+  
+  <!-- Ashoka Capitol Center Emblem -->
+  <g transform="translate(120, 84) scale(0.8)">
+    <path d="M-14,-20 L14,-20 L18,0 L0,20 L-18,0 Z" fill="#FFFFFF" opacity="0.25" stroke="#FFFFFF" stroke-width="2"/>
+    <circle cx="0" cy="-8" r="5" fill="#FFFFFF" />
+    <path d="M-8,-14 L8,-14 L10,-2 L0,10 L-10,-2 Z" fill="none" stroke="#FFFFFF" stroke-width="1.8"/>
+  </g>
+  
+  <!-- Center DSIR Box & Text -->
+  <rect x="62" y="112" width="116" height="24" rx="4" fill="#FFFFFF" opacity="0.15" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="120" y="129" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="16.5" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="2.5">
+    DSIR
+  </text>
+  <text x="120" y="148" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">
+    RECOGNIZED
+  </text>
+  <text x="120" y="159" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="6.5" font-weight="700" fill="#FFFFFF" opacity="0.85" text-anchor="middle" letter-spacing="0.6">
+    RECOGNITION FOR IN HOUSE R&amp;D
+  </text>
+</svg>

@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCapabilities, onOpenContac
     { label: 'Materials', href: '#materials' },
     { label: 'Industries', href: '#industries' },
     { label: 'Sustainability', href: '#sustainability' },
-    { label: 'Innovation', href: '#quality' },
+    { label: 'Innovation', href: '#mirac' },
     { label: 'Contact', href: '#contact', hasArrow: true, isContact: true },
   ];
 
@@ -27,24 +27,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCapabilities, onOpenContac
   };
 
   return (
-    <header className="w-full bg-[#EDF4F0] border-b border-[#D8E6DE] sticky top-0 z-50 transition-colors duration-200">
-      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12 py-3 flex items-center justify-between">
+    <header className="w-full bg-[#EDF4F0] border-b border-[#D8E6DE] sticky top-0 z-50 transition-all duration-200">
+      <div className="w-full max-w-[1920px] mx-auto px-[clamp(16px,4.7vw,90px)] min-h-[clamp(72px,6.5vw,125px)] py-2 sm:py-3 flex items-center justify-between">
         
-        {/* Left: MPL Circular Dotted Swirl Logo + Brand Name */}
-        <a href="#hero" className="flex items-center gap-3 group focus:outline-none">
+        {/* Left: Official MPL Logo Mark + Live Wordmark */}
+        <a href="#hero" className="flex items-center gap-[clamp(12px,1.8vw,35px)] group focus:outline-none shrink-0">
           <img
-            src="/icons/logo-mpl.svg"
-            alt="MPL Logo"
-            className="w-11 h-11 shrink-0 transform group-hover:rotate-12 transition-transform duration-500"
+            src="/images/logo/mpl-logo.svg"
+            alt="Machino Polymers Limited logo"
+            width={120}
+            height={95}
+            className="w-[clamp(56px,6.25vw,120px)] h-auto object-contain shrink-0"
           />
-          <span className="text-[#0F172A] font-display font-extrabold text-lg sm:text-xl tracking-tight">
-            Machino Polymers Limited
+          <span className="text-[#0B0F1A] font-semibold text-[clamp(16px,1.15vw,22px)] leading-[1.2] tracking-normal whitespace-nowrap">
+            <span className="hidden sm:inline">Machino Polymers Limited</span>
+            <span className="sm:hidden">Machino Polymers</span>
           </span>
         </a>
 
         {/* Right Section: Navigation Links & CAPABILITIES Button */}
-        <div className="hidden lg:flex items-center gap-8">
-          <nav className="flex items-center gap-7">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-8">
+          <nav className="flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -72,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCapabilities, onOpenContac
                 el?.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="bg-[#FF5500] hover:bg-[#E64D00] text-white font-bold tracking-[0.15em] text-xs px-6 py-3 rounded-none uppercase transition-colors shadow-sm focus:outline-none cursor-pointer"
+            className="bg-[#FF5500] hover:bg-[#E64D00] text-white font-bold tracking-[0.15em] text-xs px-6 py-3 rounded-none uppercase transition-colors shadow-sm focus:outline-none cursor-pointer shrink-0"
           >
             CAPABILITIES
           </button>

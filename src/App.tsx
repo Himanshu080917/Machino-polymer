@@ -8,9 +8,7 @@ import { IndustriesStrip } from './components/IndustriesStrip';
 import { ManufacturingTechSection } from './components/ManufacturingTechSection';
 import { PhotoBannerSection } from './components/PhotoBannerSection';
 import { QualityDisciplineSection } from './components/QualityDisciplineSection';
-import { MaterialExplorer } from './components/MaterialExplorer';
 import { MiracRDSection } from './components/MiracRDSection';
-import { ManufacturingFootprint } from './components/ManufacturingFootprint';
 import { FutureMaterialsCTA } from './components/FutureMaterialsCTA';
 import { Footer } from './components/Footer';
 import { SearchModal } from './components/SearchModal';
@@ -79,28 +77,23 @@ export function App() {
         {/* 7. Manufacturing Excellence (Precision at Industrial Scale) */}
         <ManufacturingTechSection />
 
-        {/* 7.1 Full-Bleed Photo Banner (Mid-Page Break) */}
-        <PhotoBannerSection />
+        {/* Stacked Panels Container */}
+        <div className="stack-container stack">
+          {/* 8. Full-Bleed Photo Banner (ISO 9001 · IATF 16949 Compliant Production Floor) */}
+          <PhotoBannerSection />
 
-        {/* 8. Total Quality Management (Quality is a Discipline) */}
-        <QualityDisciplineSection />
+          {/* 9. MIRAC R&D Center (Innovation at the Molecular Level) - FIRST */}
+          <MiracRDSection />
 
-        {/* 9. Advanced Materials & Grades Catalog */}
-        <MaterialExplorer
-          onOpenSampleModal={handleOpenSampleModal}
-        />
+          {/* 10. Quality Management Systems (Quality is a Discipline) - SECOND */}
+          <QualityDisciplineSection />
 
-        {/* 10. MIRAC R&D Center & Testing Laboratory */}
-        <MiracRDSection />
-
-        {/* 11. Manufacturing Footprint Across India */}
-        <ManufacturingFootprint />
-
-        {/* 12. Next-Gen Future Materials CTA Banner */}
-        <FutureMaterialsCTA
-          onOpenSampleModal={handleOpenSampleModal}
-          onOpenContact={handleOpenContact}
-        />
+          {/* 11. Next-Gen Future Materials CTA Banner */}
+          <FutureMaterialsCTA
+            onOpenSampleModal={handleOpenSampleModal}
+            onOpenContact={handleOpenContact}
+          />
+        </div>
       </main>
 
       {/* 13. Footer */}
