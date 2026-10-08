@@ -24,17 +24,17 @@ export const MiracRDSection: React.FC = () => {
       <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2 bg-black/35 z-0 pointer-events-none" />
 
       {/* 3. Main Content Container (Left Half) */}
-      <div className="relative z-10 w-full lg:w-1/2 flex flex-col justify-center pt-8 sm:pt-10 lg:pt-12 pb-10 sm:pb-12 pl-[clamp(24px,8.4vw,162px)] pr-[clamp(24px,4vw,60px)]">
+      <div className="relative z-10 w-full lg:w-1/2 flex flex-col justify-center pt-8 sm:pt-10 lg:pt-12 pb-10 sm:pb-12 px-5 sm:px-10 lg:pl-[clamp(24px,8.4vw,162px)] lg:pr-[clamp(24px,4vw,60px)]">
         <div className="max-w-[680px] text-left">
           
           {/* H2 Title (No eyebrow in Figma) */}
-          <h2 className="text-white font-display font-extrabold tracking-[-0.02em] leading-[1.14] text-[clamp(40px,4.15vw,80px)]">
+          <h2 className="text-white font-display font-extrabold tracking-[-0.02em] leading-[1.14] text-[clamp(32px,4.15vw,80px)]">
             <span className="block">Innovation at the</span>
             <span className="block">molecular level.</span>
           </h2>
 
           {/* Body Text (Muted grey rgba(255,255,255,0.65), wrapping at ~680px) */}
-          <div className="mt-8 sm:mt-11 space-y-2.5 text-white/65 text-[clamp(16px,1.15vw,22px)] leading-[1.6] font-normal">
+          <div className="mt-6 sm:mt-11 space-y-2.5 text-white/65 text-[clamp(15px,1.15vw,22px)] leading-[1.6] font-normal">
             <p>
               Machino Innovative Research and Application Center (MIRAC), the in house R&amp;D unit of MPL is accredited by Department of Scientific and Industrial Research under Ministry of Science and Technology, Govt. of India. MIRAC is accredited by NABL and also possesses the ISO/ IEC 17025 certification.
             </p>
@@ -44,20 +44,20 @@ export const MiracRDSection: React.FC = () => {
           </div>
 
           {/* Explore MIRAC Pill Button */}
-          <div className="mt-7 sm:mt-9">
+          <div className="mt-6 sm:mt-9">
             <button
               onClick={() => setShowEquipment(!showEquipment)}
-              className="inline-flex items-center justify-center rounded-full bg-[#1F2D52] hover:bg-[#27386A] text-white border border-white/15 text-[clamp(16px,1.1vw,22px)] font-semibold tracking-wide transition-all duration-200 shadow-xl hover:-translate-y-0.5 min-h-[56px] sm:min-h-[64px] px-8 sm:px-10 cursor-pointer focus-visible:outline-2 focus-visible:outline-white/50 w-full sm:w-auto"
+              className="inline-flex items-center justify-center rounded-full bg-[#1F2D52] hover:bg-[#27386A] text-white border border-white/15 text-[clamp(15px,1.1vw,22px)] font-semibold tracking-wide transition-all duration-200 shadow-xl hover:-translate-y-0.5 min-h-[52px] sm:min-h-[64px] px-7 sm:px-10 cursor-pointer focus-visible:outline-2 focus-visible:outline-white/50 w-full sm:w-auto"
             >
               <span>{showEquipment ? 'Hide Equipment Suite' : 'Explore MIRAC'}</span>
             </button>
           </div>
 
-          {/* Accreditation Badges Row (Below Button, aligned left, gap ~65px, height auto, no clipping) */}
-          <div className="mt-7 sm:mt-9 flex items-center gap-[clamp(32px,3.4vw,65px)]">
+          {/* Accreditation Badges Row (Below Button, aligned left, responsive gap & scaling) */}
+          <div className="mt-6 sm:mt-9 flex flex-wrap sm:flex-nowrap items-center gap-5 sm:gap-[clamp(32px,3.4vw,65px)]">
             
-            {/* DSIR Seal (~220px at 1920px) */}
-            <div className="w-[clamp(120px,11.5vw,220px)] h-[clamp(120px,11.5vw,220px)] shrink-0">
+            {/* DSIR Seal */}
+            <div className="w-[105px] sm:w-[clamp(120px,11.5vw,220px)] h-[105px] sm:h-[clamp(120px,11.5vw,220px)] shrink-0">
               <img
                 src="/images/badges/dsir.svg"
                 alt="DSIR recognised in-house R&D unit"
@@ -65,8 +65,8 @@ export const MiracRDSection: React.FC = () => {
               />
             </div>
 
-            {/* NABL Seal (~155px at 1920px, height: auto, full wordmark visible) */}
-            <div className="w-[clamp(90px,8vw,155px)] shrink-0">
+            {/* NABL Seal */}
+            <div className="w-[85px] sm:w-[clamp(90px,8vw,155px)] shrink-0">
               <img
                 src="/images/badges/nabl.svg"
                 alt="NABL accredited laboratory"

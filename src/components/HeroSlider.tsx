@@ -158,15 +158,15 @@ export const HeroSlider: React.FC = () => {
       </button>
 
       {/* Bottom Content Area */}
-      <div className="relative z-10 w-full px-6 sm:px-10 lg:px-16 pb-8 sm:pb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+      <div className="relative z-10 w-full px-4 sm:px-10 lg:px-16 pb-8 sm:pb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
         
         {/* Left: Interactive 6-Stage Lifecycle Selector */}
-        <div className="w-full md:w-auto bg-black/60 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 border border-white/10 shadow-2xl">
+        <div className="w-full md:w-auto bg-black/60 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 border border-white/10 shadow-2xl overflow-x-auto max-w-full">
           <div className="text-[10px] font-mono-tech uppercase tracking-widest text-[#FF5500] font-bold px-2 mb-2 flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse" />
             <span>MATERIALS LIFECYCLE</span>
           </div>
-          <div className="flex flex-wrap md:flex-nowrap items-center gap-1 sm:gap-1.5">
+          <div className="flex flex-nowrap sm:flex-wrap md:flex-nowrap items-center gap-1 sm:gap-1.5 min-w-max sm:min-w-0">
             {slides.map((s, idx) => {
               const isActive = idx === currentIdx;
               return (
@@ -175,7 +175,7 @@ export const HeroSlider: React.FC = () => {
                   onClick={() => {
                     setCurrentIdx(idx);
                   }}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-mono-tech transition-all flex items-center gap-1.5 cursor-pointer ${
+                  className={`px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-mono-tech transition-all flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 ${
                     isActive
                       ? 'bg-[#FF5500] text-white font-bold shadow-lg shadow-[#FF5500]/30 scale-105'
                       : 'text-white/70 hover:text-white hover:bg-white/10'
@@ -194,7 +194,7 @@ export const HeroSlider: React.FC = () => {
         {/* Right: Eyebrow + Two-line Headline + Subtext */}
         <div
           key={`content-${currentSlide.id}`}
-          className="max-w-xl text-right space-y-2.5 transition-all duration-500 animate-fade-in"
+          className="max-w-xl text-left md:text-right space-y-2.5 transition-all duration-500 animate-fade-in ml-0 md:ml-auto"
         >
           {/* Eyebrow: Bright Orange uppercase letter-spaced text */}
           <div className="text-[#FF5500] font-mono-tech tracking-[0.2em] text-xs font-bold uppercase drop-shadow-sm">
@@ -211,7 +211,7 @@ export const HeroSlider: React.FC = () => {
             </div>
           </h2>
 
-          <p className="text-white/75 text-xs sm:text-sm max-w-md ml-auto leading-relaxed">
+          <p className="text-white/75 text-xs sm:text-sm max-w-md ml-0 md:ml-auto leading-relaxed">
             {currentSlide.subtext}
           </p>
         </div>

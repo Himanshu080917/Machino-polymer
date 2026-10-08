@@ -55,7 +55,7 @@ export const FutureMaterialsCTA: React.FC<FutureMaterialsCTAProps> = ({ onOpenCo
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-md bg-[#FF5500] hover:bg-[#E04B00] text-white font-bold text-sm tracking-wide transition-all shadow-xl shadow-[#FF5500]/25 hover:translate-x-0.5 cursor-pointer group"
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-md bg-[#FF5500] hover:bg-[#E04B00] text-white font-bold text-sm tracking-wide transition-all shadow-xl shadow-[#FF5500]/25 hover:translate-x-0.5 cursor-pointer group w-full sm:w-auto"
             >
               <span>Start a conversation</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
