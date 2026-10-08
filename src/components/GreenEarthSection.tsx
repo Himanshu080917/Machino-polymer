@@ -1,130 +1,113 @@
 import React from 'react';
-import { CheckCircle2, Leaf, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Zap, Lightbulb, Award, Calendar } from 'lucide-react';
 
 export const GreenEarthSection: React.FC<{ onOpenSampleModal?: (grade?: string) => void }> = ({
   onOpenSampleModal,
 }) => {
-  const pillars = [
+  const cards = [
     {
-      title: 'Up to 100% Recycled Content',
-      desc: 'Formulations engineered with high-purity post-consumer (PCR) and post-industrial (PIR) resins.',
+      icon: Zap,
+      title1: 'Sustainably',
+      title2: 'Committed',
     },
     {
-      title: '-68% Lower Carbon Footprint',
-      desc: 'Substantial Scope-3 lifecycle greenhouse gas reduction verified by ISO 14040/44 LCA methodologies.',
+      icon: Lightbulb,
+      title1: 'Innovation',
+      title2: 'Driven',
     },
     {
-      title: 'Closed-Loop OEM Takeback',
-      desc: 'Seamless reverse logistics converting industrial scrap and end-of-life components back into prime parts.',
+      icon: Award,
+      title1: 'Quality',
+      title2: 'Focussed',
     },
     {
-      title: 'Prime Parity Mechanicals',
-      desc: 'Proprietary chain-extenders and tougheners ensuring impact, tensile, and thermal integrity match virgin grades.',
+      icon: Calendar,
+      title1: 'Tomorrow',
+      title2: 'Ready',
     },
   ];
 
   return (
-    <section id="sustainability" className="py-24 bg-[#F0FDF4] text-[#0F172A] relative overflow-hidden border-b border-[#DCFCE7]">
-      {/* Subtle emerald glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="sustainability" className="relative w-full bg-[#0B1B14] text-white overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[640px]">
         
-        {/* Header Tag & Title */}
-        <div className="max-w-3xl space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-600/10 border border-emerald-600/20 text-emerald-700 font-mono-tech text-xs font-bold tracking-widest uppercase">
-            <Leaf className="w-3.5 h-3.5" />
-            <span>GREEN EARTH CIRCULARITY</span>
+        {/* Left Column: Dark Pine Narrative Panel */}
+        <div className="lg:col-span-5 bg-[#0B1B14] p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-8 relative z-10">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3 text-emerald-400 font-mono-tech text-xs tracking-[0.2em] uppercase font-semibold">
+            <span className="w-5 h-[1.5px] bg-emerald-400" />
+            <span>GREEN EARTH SUSTAINABILITY SOLUTIONS</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-[#0F172A] leading-tight tracking-tight">
-            Circular Engineering. <br />
-            <span className="text-emerald-600">Engineered to Return.</span>
+          {/* 4-Line Display Headline */}
+          <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-display leading-[1.08] tracking-tight">
+            <div className="font-extrabold text-white">Circular</div>
+            <div className="font-extrabold text-white">Engineering.</div>
+            <div className="font-light text-[#64748B] mt-1">Engineered</div>
+            <div className="font-light text-[#64748B]">to Return.</div>
           </h2>
 
-          <p className="text-[#475569] text-base leading-relaxed">
-            We transform post-industrial and post-consumer polymers into certified, high-performance compounds without sacrificing mechanical strength, aesthetic finish, or thermal integrity.
+          {/* Description */}
+          <p className="text-[#94A3B8] text-sm sm:text-base lg:text-[16px] leading-relaxed max-w-lg">
+            Green Earth is Machino&apos;s proprietary circular manufacturing programme — integrating post-consumer and post-industrial recycled streams into premium-grade polymer compounds without performance compromise.
           </p>
+
+          {/* Discover Green Earth Button */}
+          <div className="pt-2">
+            <button
+              onClick={() => onOpenSampleModal?.('EcoTuf® GRS-Certified Circular Resin')}
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-md border border-white/20 bg-white/5 hover:bg-emerald-600/30 hover:border-emerald-400/50 text-white font-medium text-sm transition-all group cursor-pointer"
+            >
+              <span>Discover Green Earth</span>
+              <span className="font-serif text-lg group-hover:translate-x-1.5 transition-transform">→</span>
+            </button>
+          </div>
         </div>
 
-        {/* Content Grid: Left Specs & Pillars, Right Forest Image with Metric Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          {/* Left Column: GRS Badge + 4 Pillars */}
-          <div className="lg:col-span-6 space-y-6">
-            
-            {/* GRS Certification Badge */}
-            <div className="p-4 rounded-2xl bg-white border border-emerald-200 shadow-xs flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-xs font-mono-tech uppercase text-emerald-700 font-bold tracking-wider">
-                  GLOBAL RECYCLED STANDARD (GRS)
-                </div>
-                <div className="text-sm font-semibold text-[#0F172A]">
-                  100% Chain-of-Custody Traceability &amp; LCA Audited
-                </div>
-              </div>
-            </div>
+        {/* Right Column: Full-bleed Forest Photo with GRS Badge & 4 Glassmorphic Cards */}
+        <div className="lg:col-span-7 relative min-h-[480px] lg:min-h-[640px] flex flex-col justify-between p-6 sm:p-10 lg:p-14 overflow-hidden">
+          {/* Background Aerial Forest Image */}
+          <img
+            src="/images/circular-forest.jpg"
+            alt="Lush green forest canopy representing sustainable polymers"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          {/* Multi-stop cinematic dark green & black gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1B14] via-transparent to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-[#0B1B14]/20 to-black/40" />
 
-            {/* 4 Feature Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {pillars.map((p, idx) => (
-                <div
-                  key={idx}
-                  className="p-5 rounded-2xl bg-white border border-emerald-100/80 hover:border-emerald-400 hover:shadow-md transition-all"
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <h3 className="font-display font-bold text-sm text-[#0F172A]">
-                      {p.title}
-                    </h3>
-                  </div>
-                  <p className="text-[#64748B] text-xs leading-relaxed">
-                    {p.desc}
-                  </p>
-                </div>
-              ))}
+          {/* Top Banner: GRS Certification Badge */}
+          <div className="relative z-10 w-full max-w-xl mx-auto rounded-2xl bg-[#1C4B27]/90 backdrop-blur-md border border-emerald-500/40 p-5 sm:p-6 text-center shadow-2xl space-y-1">
+            <div className="text-[11px] font-mono-tech uppercase tracking-[0.2em] text-emerald-300 font-bold">
+              TRUSTED &amp; CERTIFIED
             </div>
-
-            {/* CTA */}
-            <div className="pt-2">
-              <button
-                onClick={() => onOpenSampleModal?.('EcoTuf® GRS-Certified PP')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-md shadow-emerald-600/20 cursor-pointer"
-              >
-                <span>Request Sustainable Compound Samples</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+            <h3 className="text-xl sm:text-2xl lg:text-[26px] font-display font-extrabold text-white tracking-tight">
+              Global Recycled Standard (GRS) Certified
+            </h3>
+            <div className="text-xs sm:text-sm font-medium text-emerald-200/90">
+              Certified in November 2025
             </div>
           </div>
 
-          {/* Right Column: Forest Canopy Photo with Floating Glass Card */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-emerald-200 shadow-xl group">
-              <img
-                src="/images/circular-forest.jpg"
-                alt="Machino Polymers Sustainable Forestry and Carbon Reduction"
-                className="w-full h-[420px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
-
-              {/* Floating Metric Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-between">
-                <div>
-                  <div className="text-[11px] font-mono-tech uppercase tracking-widest text-emerald-400 font-bold">
-                    ANNUAL CARBON OFFSET DELIVERED
+          {/* Bottom Grid: 4 Glassmorphism Feature Cards */}
+          <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-10">
+            {cards.map((c, idx) => {
+              const Icon = c.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-black/50 backdrop-blur-md border border-white/15 rounded-xl p-4 flex flex-col justify-between h-32 hover:border-emerald-400/50 hover:bg-black/65 transition-all group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                    <Icon className="w-4 h-4" />
                   </div>
-                  <div className="text-2xl sm:text-3xl font-display font-extrabold text-white">
-                    18,500+ MT CO₂e
+                  <div className="text-sm sm:text-[15px] font-bold text-white leading-tight">
+                    <div>{c.title1}</div>
+                    <div>{c.title2}</div>
                   </div>
                 </div>
-                <div className="px-3 py-1.5 rounded-lg bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-mono-tech font-bold">
-                  SCOPE-3 READY
-                </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
 
         </div>
