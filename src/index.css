@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  img, svg, video, canvas, audio, iframe, embed, object {
+    vertical-align: unset;
+  }
+
+  :root {
+    --brand-orange: #FF5500;
+    --brand-orange-dark: #E64D00;
+    --brand-orange-light: #FFF2EB;
+    --brand-green: #10B981;
+    --brand-navy: #1E293B;
+    
+    --bg-main: #F8FAF9;
+    --bg-surface: #FFFFFF;
+    --bg-subtle: #F1F5F3;
+    --border-main: #E2E8F0;
+    --border-mint: #D8E6DE;
+    
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #F8FAF9;
+    color: #0F172A;
+    color-scheme: light;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #F8FAF9;
+    color: #0F172A;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Custom Typography Classes */
+.font-display {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-serif-italic {
+  font-family: 'Instrument Serif', 'Playfair Display', serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Background Grids & Light Tech Overlays */
+.bg-tech-grid-light {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+}
+
+.bg-dot-pattern-light {
+  background-image: radial-gradient(rgba(255, 85, 0, 0.12) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Clean Light Panels & Cards */
+.light-panel {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+}
+
+.light-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.light-panel-hover:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  transform: translateY(-2px);
+}
+
+.orange-top-border {
+  position: relative;
+}
+
+.orange-top-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #FF5500;
+  border-radius: inherit;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5500;
+}
