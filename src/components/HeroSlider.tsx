@@ -219,7 +219,7 @@ export const HeroSlider: React.FC = () => {
         </div>
 
         {/* Right: Smooth Vertical Scrolling Headline Track */}
-        <div className="w-full md:w-auto max-w-xl ml-0 md:ml-auto overflow-hidden h-[155px] sm:h-[185px] md:h-[205px]">
+        <div className="w-full md:w-auto max-w-xl ml-0 md:ml-auto overflow-hidden h-[180px] sm:h-[195px] md:h-[205px]">
           <div
             className="flex flex-col h-full transition-transform duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-transform"
             style={{
@@ -229,7 +229,7 @@ export const HeroSlider: React.FC = () => {
             {slides.map((s) => (
               <div
                 key={s.id}
-                className="h-full shrink-0 flex flex-col justify-end text-left md:text-right space-y-1 sm:space-y-2 pb-0.5"
+                className="h-full shrink-0 flex flex-col justify-end text-left md:text-right space-y-1 sm:space-y-2 pb-0.5 overflow-hidden"
               >
                 {/* Eyebrow: Bright Orange uppercase letter-spaced text */}
                 <div className="text-[#FF5500] font-mono-tech tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-xs font-bold uppercase drop-shadow-sm">
@@ -246,7 +246,7 @@ export const HeroSlider: React.FC = () => {
                   </div>
                 </h2>
 
-                <p className="text-white/75 text-xs sm:text-sm max-w-md ml-0 md:ml-auto leading-relaxed">
+                <p className="text-white/75 text-xs sm:text-sm max-w-md ml-0 md:ml-auto leading-relaxed line-clamp-2 sm:line-clamp-none">
                   {s.subtext}
                 </p>
               </div>
