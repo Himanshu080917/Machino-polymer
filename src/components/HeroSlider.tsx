@@ -160,6 +160,13 @@ export const HeroSlider: React.FC = () => {
             {/* Multi-stop cinematic dark gradient overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/80" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/60" />
+
+            {/* Mobile Stage Name: Visible and properly fitted on mobile viewports */}
+            <div className="md:hidden absolute top-6 sm:top-8 left-4 sm:left-6 z-10 pointer-events-none">
+              <span className="font-display font-black text-2xl sm:text-3xl text-white tracking-wider uppercase drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]">
+                {s.stageName}
+              </span>
+            </div>
           </div>
         ))}
       </div>
