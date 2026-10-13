@@ -1,0 +1,1572 @@
+[
+  {
+    "route": "/",
+    "viewport": "320x568",
+    "width": 320,
+    "height": 568,
+    "screenshot": "responsive-report/screens/after/home_320x568.png",
+    "docWidth": 320,
+    "winWidth": 320,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 640,
+        "width": 1920,
+        "text": "MATERIAL MOLECULE ENGINEERING APPLICATIO"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 640,
+        "width": 320,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 640,
+        "width": 320,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 640,
+        "width": 320,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 640,
+        "width": 320,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "md:hidden absolute top-5 sm:top-8 left-5 sm:left-6 z-10 pointer-events-none",
+        "right": 540,
+        "width": 200,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "font-display font-black text-xl sm:text-3xl text-white tracking-wider uppercase ",
+        "right": 540,
+        "width": 200,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex flex-nowrap sm:flex-wrap md:flex-nowrap items-center gap-1 sm:gap-1.5 min-w",
+        "right": 724,
+        "width": 693,
+        "text": "MATERIAL MOLECULE ENGINEERING APPLICATIO"
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.3856492314776644
+  },
+  {
+    "route": "/",
+    "viewport": "360x740",
+    "width": 360,
+    "height": 740,
+    "screenshot": "responsive-report/screens/after/home_360x740.png",
+    "docWidth": 360,
+    "winWidth": 360,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 720,
+        "width": 2160,
+        "text": "MATERIAL MOLECULE ENGINEERING APPLICATIO"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 720,
+        "width": 360,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 720,
+        "width": 360,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 720,
+        "width": 360,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 720,
+        "width": 360,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "md:hidden absolute top-5 sm:top-8 left-5 sm:left-6 z-10 pointer-events-none",
+        "right": 580,
+        "width": 200,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "font-display font-black text-xl sm:text-3xl text-white tracking-wider uppercase ",
+        "right": 580,
+        "width": 200,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex flex-nowrap sm:flex-wrap md:flex-nowrap items-center gap-1 sm:gap-1.5 min-w",
+        "right": 724,
+        "width": 693,
+        "text": "MATERIAL MOLECULE ENGINEERING APPLICATIO"
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4122071222404837
+  },
+  {
+    "route": "/",
+    "viewport": "390x844",
+    "width": 390,
+    "height": 844,
+    "screenshot": "responsive-report/screens/after/home_390x844.png",
+    "docWidth": 390,
+    "winWidth": 390,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 780,
+        "width": 2340,
+        "text": "MATERIAL MOLECULE ENGINEERING APPLICATIO"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 780,
+        "width": 390,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 780,
+        "width": 390,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 780,
+        "width": 390,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 780,
+        "width": 390,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "md:hidden absolute top-5 sm:top-8 left-5 sm:left-6 z-10 pointer-events-none",
+        "right": 610,
+        "width": 200,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "className": "font-display font-black text-xl sm:text-3xl text-white tracking-wider uppercase ",
+        "right": 610,
+        "width": 200,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex flex-nowrap sm:flex-wrap md:flex-nowrap items-center gap-1 sm:gap-1.5 min-w",
+        "right": 724,
+        "width": 693,
+        "text": "MATERIAL MOLECULE ENGINEERING APPLICATIO"
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.42301768587022315
+  },
+  {
+    "route": "/",
+    "viewport": "414x896",
+    "width": 414,
+    "height": 896,
+    "screenshot": "responsive-report/screens/after/home_414x896.png",
+    "docWidth": 414,
+    "winWidth": 414,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 831,
+        "width": 2484,
+        "text": "MATERIAL MOLECULE ENGINEERING APPLICATIO"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 417,
+        "width": 414,
+        "text": "INDUSTRY"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 417,
+        "width": 414,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 417,
+        "width": 414,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 417,
+        "width": 414,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 831,
+        "width": 414,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 831,
+        "width": 414,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 831,
+        "width": 414,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.427482024295013
+  },
+  {
+    "route": "/",
+    "viewport": "430x932",
+    "width": 430,
+    "height": 932,
+    "screenshot": "responsive-report/screens/after/home_430x932.png",
+    "docWidth": 430,
+    "winWidth": 430,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 867,
+        "width": 2580,
+        "text": "MATERIAL MOLECULE ENGINEERING APPLICATIO"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 437,
+        "width": 430,
+        "text": "INDUSTRY"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 437,
+        "width": 430,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 437,
+        "width": 430,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 437,
+        "width": 430,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 867,
+        "width": 430,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 867,
+        "width": 430,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 867,
+        "width": 430,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.43028124045536653
+  },
+  {
+    "route": "/",
+    "viewport": "768x1024",
+    "width": 768,
+    "height": 1024,
+    "screenshot": "responsive-report/screens/after/home_768x1024.png",
+    "docWidth": 768,
+    "winWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 1566,
+        "width": 4608,
+        "text": "MATERIALMOLECULEENGINEERINGAPPLICATIONIN"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 798,
+        "width": 768,
+        "text": "INDUSTRY"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 798,
+        "width": 768,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 798,
+        "width": 768,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 798,
+        "width": 768,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 1566,
+        "width": 768,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 1566,
+        "width": 768,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 1566,
+        "width": 768,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.43662881044050056
+  },
+  {
+    "route": "/",
+    "viewport": "820x1180",
+    "width": 820,
+    "height": 1180,
+    "screenshot": "responsive-report/screens/after/home_820x1180.png",
+    "docWidth": 820,
+    "winWidth": 820,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 1642,
+        "width": 4920,
+        "text": "MATERIALMOLECULEENGINEERINGAPPLICATIONIN"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 822,
+        "width": 820,
+        "text": "INDUSTRY"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 822,
+        "width": 820,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 822,
+        "width": 820,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 822,
+        "width": 820,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 1642,
+        "width": 820,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 1642,
+        "width": 820,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 1642,
+        "width": 820,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.44498986122837564
+  },
+  {
+    "route": "/",
+    "viewport": "1024x768",
+    "width": 1024,
+    "height": 768,
+    "screenshot": "responsive-report/screens/after/home_1024x768.png",
+    "docWidth": 1024,
+    "winWidth": 1024,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 3072,
+        "width": 6144,
+        "text": "MATERIALMOLECULEENGINEERINGAPPLICATIONIN"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 2048,
+        "width": 1024,
+        "text": "INDUSTRY"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 2048,
+        "width": 1024,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 2048,
+        "width": 1024,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 2048,
+        "width": 1024,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 3072,
+        "width": 1024,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 3072,
+        "width": 1024,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 3072,
+        "width": 1024,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4163933753346403
+  },
+  {
+    "route": "/",
+    "viewport": "1280x800",
+    "width": 1280,
+    "height": 800,
+    "screenshot": "responsive-report/screens/after/home_1280x800.png",
+    "docWidth": 1280,
+    "winWidth": 1280,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 z-0 flex transition-transform duration-800 ease-[cubic-bezier(0",
+        "right": 3840,
+        "width": 7680,
+        "text": "MATERIALMOLECULEENGINEERINGAPPLICATIONIN"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 2560,
+        "width": 1280,
+        "text": "INDUSTRY"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 2560,
+        "width": 1280,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 2560,
+        "width": 1280,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60",
+        "right": 2560,
+        "width": 1280,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative h-full shrink-0 overflow-hidden",
+        "right": 3840,
+        "width": 1280,
+        "text": "CIRCULAR FUTURE"
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover object-[var(--pos-mobile)] md:object-[var(--pos-deskt",
+        "right": 3840,
+        "width": 1280,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85",
+        "right": 3840,
+        "width": 1280,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.41886092994213103
+  },
+  {
+    "route": "/about",
+    "viewport": "320x568",
+    "width": 320,
+    "height": 568,
+    "screenshot": "responsive-report/screens/after/_about_320x568.png",
+    "docWidth": 320,
+    "winWidth": 320,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 384,
+        "width": 170,
+        "text": "2000 Expanded product portfolio"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 331,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 327,
+        "width": 56,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xl sm:text-2xl font-bold text-[#111a2e] mb-1",
+        "right": 322,
+        "width": 46,
+        "text": "2000"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 372,
+        "width": 146,
+        "text": "Expanded product portfolio"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 578,
+        "width": 170,
+        "text": "2010 Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 525,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 521,
+        "width": 56,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4258991249779155
+  },
+  {
+    "route": "/about",
+    "viewport": "360x740",
+    "width": 360,
+    "height": 740,
+    "screenshot": "responsive-report/screens/after/_about_360x740.png",
+    "docWidth": 360,
+    "winWidth": 360,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 384,
+        "width": 170,
+        "text": "2000 Expanded product portfolio"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 372,
+        "width": 146,
+        "text": "Expanded product portfolio"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 578,
+        "width": 170,
+        "text": "2010 Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 525,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 521,
+        "width": 56,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xl sm:text-2xl font-bold text-[#111a2e] mb-1",
+        "right": 516,
+        "width": 46,
+        "text": "2010"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 573,
+        "width": 160,
+        "text": "Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 772,
+        "width": 170,
+        "text": "2020 Scaling new heights"
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.41460147840513656
+  },
+  {
+    "route": "/about",
+    "viewport": "390x844",
+    "width": 390,
+    "height": 844,
+    "screenshot": "responsive-report/screens/after/_about_390x844.png",
+    "docWidth": 390,
+    "winWidth": 390,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 578,
+        "width": 170,
+        "text": "2010 Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 525,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 521,
+        "width": 56,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xl sm:text-2xl font-bold text-[#111a2e] mb-1",
+        "right": 516,
+        "width": 46,
+        "text": "2010"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 573,
+        "width": 160,
+        "text": "Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 772,
+        "width": 170,
+        "text": "2020 Scaling new heights"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 719,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 715,
+        "width": 56,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4230922392429041
+  },
+  {
+    "route": "/about",
+    "viewport": "414x896",
+    "width": 414,
+    "height": 896,
+    "screenshot": "responsive-report/screens/after/_about_414x896.png",
+    "docWidth": 414,
+    "winWidth": 414,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 578,
+        "width": 170,
+        "text": "2010 Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 525,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 521,
+        "width": 56,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xl sm:text-2xl font-bold text-[#111a2e] mb-1",
+        "right": 516,
+        "width": 46,
+        "text": "2010"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 573,
+        "width": 160,
+        "text": "Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 772,
+        "width": 170,
+        "text": "2020 Scaling new heights"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 719,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 715,
+        "width": 56,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4275862618474275
+  },
+  {
+    "route": "/about",
+    "viewport": "430x932",
+    "width": 430,
+    "height": 932,
+    "screenshot": "responsive-report/screens/after/_about_430x932.png",
+    "docWidth": 430,
+    "winWidth": 430,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 578,
+        "width": 170,
+        "text": "2010 Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 525,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 521,
+        "width": 56,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xl sm:text-2xl font-bold text-[#111a2e] mb-1",
+        "right": 516,
+        "width": 46,
+        "text": "2010"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 573,
+        "width": 160,
+        "text": "Strengthened customer partnerships"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 772,
+        "width": 170,
+        "text": "2020 Scaling new heights"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 719,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 715,
+        "width": 56,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4303830454164983
+  },
+  {
+    "route": "/about",
+    "viewport": "768x1024",
+    "width": 768,
+    "height": 1024,
+    "screenshot": "responsive-report/screens/after/_about_768x1024.png",
+    "docWidth": 768,
+    "winWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "hidden sm:block absolute top-8 left-1/2 w-full h-[2px] bg-[#e5e8ee] z-0",
+        "right": 777,
+        "width": 190,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 912,
+        "width": 190,
+        "text": "2020 Scaling new heights"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "hidden sm:block absolute top-8 left-1/2 w-full h-[2px] bg-[#e5e8ee] z-0",
+        "right": 1007,
+        "width": 190,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 853,
+        "width": 72,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 849,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xl sm:text-2xl font-bold text-[#111a2e] mb-1",
+        "right": 845,
+        "width": 55,
+        "text": "2020"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 878,
+        "width": 123,
+        "text": "Scaling new heights"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 1142,
+        "width": 190,
+        "text": "Today Building a more sustainable tomorr"
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4369657598435879
+  },
+  {
+    "route": "/about",
+    "viewport": "820x1180",
+    "width": 820,
+    "height": 1180,
+    "screenshot": "responsive-report/screens/after/_about_820x1180.png",
+    "docWidth": 820,
+    "winWidth": 820,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 912,
+        "width": 190,
+        "text": "2020 Scaling new heights"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "hidden sm:block absolute top-8 left-1/2 w-full h-[2px] bg-[#e5e8ee] z-0",
+        "right": 1007,
+        "width": 190,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 853,
+        "width": 72,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 849,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xl sm:text-2xl font-bold text-[#111a2e] mb-1",
+        "right": 845,
+        "width": 55,
+        "text": "2020"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 878,
+        "width": 123,
+        "text": "Scaling new heights"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 1142,
+        "width": 190,
+        "text": "Today Building a more sustainable tomorr"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 1083,
+        "width": 72,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.44522751677661315
+  },
+  {
+    "route": "/about",
+    "viewport": "1024x768",
+    "width": 1024,
+    "height": 768,
+    "screenshot": "responsive-report/screens/after/_about_1024x768.png",
+    "docWidth": 1024,
+    "winWidth": 1024,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "hidden sm:block absolute top-8 left-1/2 w-full h-[2px] bg-[#e5e8ee] z-0",
+        "right": 1069,
+        "width": 190,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-ce",
+        "right": 1220,
+        "width": 190,
+        "text": "Today Building a more sustainable tomorr"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "relative z-10 w-16 h-16 sm:w-18 sm:h-18 rounded-full border-4 border-white shado",
+        "right": 1161,
+        "width": 72,
+        "text": ""
+      },
+      {
+        "tag": "img",
+        "id": "",
+        "className": "w-full h-full object-cover",
+        "right": 1157,
+        "width": 64,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xl sm:text-2xl font-bold text-[#111a2e] mb-1",
+        "right": 1159,
+        "width": 67,
+        "text": "Today"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-xs sm:text-sm text-[#4b5568] leading-snug max-w-[160px]",
+        "right": 1205,
+        "width": 160,
+        "text": "Building a more sustainable tomorrow"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "hidden lg:flex shrink-0 flex-col justify-center items-start pl-6 self-center",
+        "right": 1413,
+        "width": 137,
+        "text": "A journey of progress"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-2xl sm:text-3xl font-serif-italic text-[#17213b] -rotate-6 italic leading-t",
+        "right": 1417,
+        "width": 120,
+        "text": "A journey of progress"
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.41676217752198375
+  },
+  {
+    "route": "/about",
+    "viewport": "1280x800",
+    "width": 1280,
+    "height": 800,
+    "screenshot": "responsive-report/screens/after/_about_1280x800.png",
+    "docWidth": 1280,
+    "winWidth": 1280,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [
+      {
+        "tag": "div",
+        "id": "",
+        "className": "hidden lg:flex shrink-0 flex-col justify-center items-start pl-6 self-center",
+        "right": 1425,
+        "width": 137,
+        "text": "A journey of progress"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "text-2xl sm:text-3xl font-serif-italic text-[#17213b] -rotate-6 italic leading-t",
+        "right": 1428,
+        "width": 120,
+        "text": "A journey of progress"
+      },
+      {
+        "tag": "br",
+        "id": "",
+        "className": "",
+        "right": 1415,
+        "width": 4,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "className": "w-10 h-1 bg-[#1e4fa3] mt-2 rounded-full -rotate-6",
+        "right": 1352,
+        "width": 40,
+        "text": ""
+      }
+    ],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.41969305489063263
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "320x568",
+    "width": 320,
+    "height": 568,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_320x568.png",
+    "docWidth": 320,
+    "winWidth": 320,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.44005870610989883
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "360x740",
+    "width": 360,
+    "height": 740,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_360x740.png",
+    "docWidth": 360,
+    "winWidth": 360,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.41457962792818154
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "390x844",
+    "width": 390,
+    "height": 844,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_390x844.png",
+    "docWidth": 390,
+    "winWidth": 390,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.42329889994652486
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "414x896",
+    "width": 414,
+    "height": 896,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_414x896.png",
+    "docWidth": 414,
+    "winWidth": 414,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.427898974504671
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "430x932",
+    "width": 430,
+    "height": 932,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_430x932.png",
+    "docWidth": 430,
+    "winWidth": 430,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4308286981398432
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "768x1024",
+    "width": 768,
+    "height": 1024,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_768x1024.png",
+    "docWidth": 768,
+    "winWidth": 768,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4369087202164034
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "820x1180",
+    "width": 820,
+    "height": 1180,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_820x1180.png",
+    "docWidth": 820,
+    "winWidth": 820,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4454077015864869
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "1024x768",
+    "width": 1024,
+    "height": 768,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_1024x768.png",
+    "docWidth": 1024,
+    "winWidth": 1024,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4352449159681176
+  },
+  {
+    "route": "/about/company-overview",
+    "viewport": "1280x800",
+    "width": 1280,
+    "height": 800,
+    "screenshot": "responsive-report/screens/after/_about_company_overview_1280x800.png",
+    "docWidth": 1280,
+    "winWidth": 1280,
+    "hasHorizontalOverflow": false,
+    "overflowElements": [],
+    "clippedTextElements": [],
+    "smallTapTargets": [],
+    "smallBodyText": [],
+    "wideImages": [],
+    "cls": 0.4191513352870941
+  }
+]
