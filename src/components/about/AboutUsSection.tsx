@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   ChevronRight,
@@ -38,11 +39,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       e.preventDefault();
       onOpenContact();
     } else {
-      const el = document.getElementById('contact');
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+      window.location.href = '/#contact';
     }
   };
 
@@ -51,34 +48,28 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       {/* =========================================================================
           A1. HERO SECTION
           ========================================================================= */}
-      <div className="w-full bg-white relative pt-6 sm:pt-10 pb-20 sm:pb-28 lg:pb-32 overflow-hidden">
-        <div className="max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)]">
-          {/* Breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-sm text-[#4b5568] mb-8 sm:mb-12">
-            {content.breadcrumbs.map((crumb, idx) => (
-              <React.Fragment key={idx}>
-                {idx > 0 && <span className="text-[#9aa3b2] text-xs">›</span>}
-                <a
-                  href={crumb.href}
-                  className={`hover:text-[#111a2e] transition-colors ${
-                    idx === content.breadcrumbs.length - 1 ? 'font-medium text-[#111a2e]' : ''
-                  }`}
-                >
-                  {crumb.label}
-                </a>
-              </React.Fragment>
-            ))}
+      <div className="w-full bg-white relative pt-6 sm:pt-10 pb-16 sm:pb-24 lg:pb-32 overflow-hidden">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)]">
+          {/* Breadcrumbs: Home > About Us */}
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs sm:text-sm text-[#4b5568] mb-6 sm:mb-10">
+            <Link to="/" className="hover:text-[#111a2e] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              Home
+            </Link>
+            <span className="text-[#9aa3b2] text-xs">›</span>
+            <span className="font-medium text-[#111a2e] min-h-[44px] flex items-center">
+              About Us
+            </span>
           </nav>
 
-          {/* Hero Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            {/* Left Column: Eyebrow, H1, Paragraph, CTA Button */}
-            <div className="lg:col-span-6 space-y-6 sm:space-y-8 z-10">
+          {/* Hero Grid: Single column on mobile/tablet, 2-column on desktop */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left: Text first */}
+            <div className="lg:col-span-6 space-y-5 sm:space-y-7 z-10">
               <div className="inline-block text-xs font-bold tracking-[0.2em] text-[#4b5568] uppercase">
                 {content.hero.eyebrow}
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#111a2e] leading-[1.08] tracking-tight">
+              <h1 className="text-[clamp(32px,5.8vw,56px)] font-bold text-[#111a2e] leading-[1.08] tracking-tight">
                 <div>{content.hero.titleLine1}</div>
                 <div>{content.hero.titleLine2}</div>
                 <div className="text-[#1e4fa3]">{content.hero.titleAccent}</div>
@@ -92,7 +83,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                 <button
                   type="button"
                   onClick={handleScrollToJourney}
-                  className="inline-flex items-center justify-center gap-3 px-7 h-[46px] rounded-[6px] bg-[#17213b] text-white text-sm font-semibold hover:bg-[#111a2e] transition-all hover:gap-4 shadow-sm cursor-pointer"
+                  className="inline-flex items-center justify-center gap-3 px-7 min-h-[48px] rounded-[6px] bg-[#17213b] text-white text-sm font-semibold hover:bg-[#111a2e] transition-all hover:gap-4 shadow-sm cursor-pointer w-full sm:w-auto"
                 >
                   <span>{content.hero.ctaButton}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -100,22 +91,22 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </div>
             </div>
 
-            {/* Right Column: Factory Building Photo */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(16,24,40,0.08)] bg-neutral-100 group">
+            {/* Right: Factory Building Photo below on mobile, 4:3 or 16:10, rounded */}
+            <div className="lg:col-span-6 relative w-full">
+              <div className="relative rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(16,24,40,0.08)] bg-neutral-100 group aspect-[16/10]">
                 <img
                   src={content.hero.image}
                   alt="Machino Polymers Limited factory facility"
                   width={750}
                   height={450}
-                  className="w-full h-auto object-cover min-h-[320px] sm:min-h-[420px]"
+                  className="w-full h-full object-cover"
                 />
-                {/* Left Edge Soft Fade overlay to blend seamlessly */}
-                <div className="absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-white/90 via-white/40 to-transparent pointer-events-none" />
+                {/* Left Edge Soft Fade overlay on desktop */}
+                <div className="hidden sm:block absolute inset-y-0 left-0 w-24 sm:w-36 bg-gradient-to-r from-white/90 via-white/40 to-transparent pointer-events-none" />
 
-                {/* Bottom-right photo badge with vertical white line */}
-                <div className="absolute bottom-6 right-6 flex items-center gap-3 bg-black/40 backdrop-blur-md px-4 py-2.5 rounded border border-white/20 text-white text-left">
-                  <div className="w-[2px] h-9 bg-white shrink-0" />
+                {/* Photo Badge */}
+                <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 flex items-center gap-2.5 sm:gap-3 bg-black/50 backdrop-blur-md px-3.5 sm:px-4 py-2 sm:py-2.5 rounded border border-white/20 text-white text-left max-w-[calc(100%-32px)]">
+                  <div className="w-[2px] h-8 sm:h-9 bg-white shrink-0" />
                   <div className="text-[10px] sm:text-[11px] font-semibold tracking-wider leading-tight uppercase">
                     {content.hero.photoBadge.map((line, i) => (
                       <div key={i}>{line}</div>
@@ -127,9 +118,9 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
           </div>
 
           {/* =========================================================================
-              A2. STATS BAR (Overlapping bottom of hero)
+              A2. STATS BAR (Below photo as 2x2 on mobile, 4x1 on desktop)
               ========================================================================= */}
-          <div className="mt-12 sm:mt-16 lg:-mb-14 relative z-20">
+          <div className="mt-8 sm:mt-12 lg:-mb-14 relative z-20">
             <StatsBar stats={content.stats} />
           </div>
         </div>
@@ -138,26 +129,26 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       {/* =========================================================================
           A3. OUR STORY
           ========================================================================= */}
-      <section className="w-full bg-white pt-20 sm:pt-28 pb-16 sm:pb-24 border-b border-[#e5e8ee]">
-        <div className="max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <section className="w-full bg-white pt-16 sm:pt-24 lg:pt-28 pb-14 sm:pb-20 border-b border-[#e5e8ee]">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
             {/* Left Column: Text */}
             <div className="lg:col-span-6 space-y-5">
               <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#111a2e] tracking-tight">
+              <h2 className="text-[clamp(28px,4.5vw,40px)] font-bold text-[#111a2e] tracking-tight">
                 {content.story.title}
               </h2>
-              <div className="text-lg sm:text-xl font-bold text-[#111a2e] leading-snug">
+              <div className="text-base sm:text-xl font-bold text-[#111a2e] leading-snug">
                 {content.story.subtitle}
               </div>
               <p className="text-base sm:text-lg text-[#4b5568] leading-[1.7] pt-1">
                 {content.story.body}
               </p>
-              <div className="pt-4">
+              <div className="pt-2">
                 <button
                   type="button"
                   onClick={handleScrollToJourney}
-                  className="inline-flex items-center gap-3 px-7 h-[46px] rounded-[6px] bg-[#17213b] text-white text-sm font-semibold hover:bg-[#111a2e] transition-all hover:gap-4 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-3 px-7 min-h-[46px] rounded-[6px] bg-[#17213b] text-white text-sm font-semibold hover:bg-[#111a2e] transition-all hover:gap-4 cursor-pointer w-full sm:w-auto"
                 >
                   <span>{content.story.buttonText}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -165,7 +156,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </div>
             </div>
 
-            {/* Right Column: Dark-tinted image card with white overlay quote */}
+            {/* Right Column: Image card */}
             <div className="lg:col-span-6">
               <div className="relative rounded-[14px] overflow-hidden shadow-lg aspect-[16/10] bg-[#111a2e] group">
                 <img
@@ -177,8 +168,8 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                   className="w-full h-full object-cover mix-blend-luminosity brightness-75 group-hover:scale-102 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-[#111a2e]/60" />
-                <div className="absolute inset-0 p-8 sm:p-12 flex flex-col justify-end">
-                  <blockquote className="text-xl sm:text-2xl lg:text-3xl font-semibold text-white leading-tight max-w-md">
+                <div className="absolute inset-0 p-6 sm:p-12 flex flex-col justify-end">
+                  <blockquote className="text-lg sm:text-2xl lg:text-3xl font-semibold text-white leading-tight max-w-md">
                     {content.story.quote}
                   </blockquote>
                   <div className="w-12 h-1 bg-white mt-4 rounded-full" />
@@ -192,13 +183,13 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       {/* =========================================================================
           A4. OUR JOURNEY (Light grey-blue band #f3f5f9)
           ========================================================================= */}
-      <section id="about-journey" className="w-full bg-[#f3f5f9] py-20 sm:py-24 border-b border-[#e5e8ee] scroll-mt-28">
-        <div className="max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)]">
+      <section id="about-journey" className="w-full bg-[#f3f5f9] py-16 sm:py-24 border-b border-[#e5e8ee] scroll-mt-28">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)]">
           {/* Header Row */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
-            <div className="space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-14">
+            <div className="space-y-2 sm:space-y-3">
               <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#111a2e] tracking-tight">
+              <h2 className="text-[clamp(28px,4.5vw,40px)] font-bold text-[#111a2e] tracking-tight">
                 {content.journey.title}
               </h2>
               <div className="text-base sm:text-lg font-normal text-[#4b5568]">
@@ -206,13 +197,13 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </div>
             </div>
 
-            {/* Prev/Next Circular Buttons */}
+            {/* Prev/Next Circular Buttons (≥44x44px tap targets) */}
             <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={() => scrollTimeline('left')}
                 aria-label="Previous milestones"
-                className="w-10 h-10 rounded-full border border-[#17213b]/30 bg-white flex items-center justify-center text-[#17213b] hover:bg-[#17213b] hover:text-white transition-colors cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-[#17213b]/30 bg-white flex items-center justify-center text-[#17213b] hover:bg-[#17213b] hover:text-white transition-colors cursor-pointer"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -220,21 +211,21 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                 type="button"
                 onClick={() => scrollTimeline('right')}
                 aria-label="Next milestones"
-                className="w-10 h-10 rounded-full border border-[#17213b]/30 bg-white flex items-center justify-center text-[#17213b] hover:bg-[#17213b] hover:text-white transition-colors cursor-pointer"
+                className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full border border-[#17213b]/30 bg-white flex items-center justify-center text-[#17213b] hover:bg-[#17213b] hover:text-white transition-colors cursor-pointer"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
             </div>
           </div>
 
-          {/* Timeline Row */}
+          {/* Timeline Row: Scroll-snap with visible peek affordance */}
           <div className="relative">
             <div
               ref={journeyTimelineRef}
-              className="flex items-start gap-8 sm:gap-12 lg:gap-16 overflow-x-auto pb-6 scrollbar-none snap-x"
+              className="flex items-start gap-6 sm:gap-10 lg:gap-14 overflow-x-auto pb-6 scrollbar-none snap-x snap-mandatory"
             >
               {content.journey.milestones.map((milestone, idx) => (
-                <div key={idx} className="flex-1 min-w-[160px] sm:min-w-[190px] snap-start relative flex flex-col items-center text-center">
+                <div key={idx} className="flex-1 min-w-[170px] sm:min-w-[190px] snap-start relative flex flex-col items-center text-center">
                   {/* Connecting Line */}
                   {idx < content.journey.milestones.length - 1 && (
                     <div className="hidden sm:block absolute top-8 left-1/2 w-full h-[2px] bg-[#e5e8ee] z-0" />
@@ -262,41 +253,49 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                 </div>
               ))}
 
-              {/* Far right handwritten text */}
-              <div className="shrink-0 flex flex-col justify-center items-start pl-4 sm:pl-8 self-center">
+              {/* Far right script text on Desktop */}
+              <div className="hidden lg:flex shrink-0 flex-col justify-center items-start pl-6 self-center">
                 <div className="text-2xl sm:text-3xl font-serif-italic text-[#17213b] -rotate-6 italic leading-tight">
                   A journey<br />of progress
                 </div>
                 <div className="w-10 h-1 bg-[#1e4fa3] mt-2 rounded-full -rotate-6" />
               </div>
             </div>
+
+            {/* Mobile Script Text Centered Under Timeline (No rotation overflow) */}
+            <div className="lg:hidden mt-6 flex flex-col items-center justify-center text-center">
+              <div className="text-xl sm:text-2xl font-serif-italic text-[#17213b] italic leading-tight">
+                A journey of progress
+              </div>
+              <div className="w-12 h-1 bg-[#1e4fa3] mt-2 rounded-full" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          A5. OUR LEADERSHIP (White band)
+          A5. OUR LEADERSHIP (White band, scroll snap carousel on mobile)
           ========================================================================= */}
-      <section className="w-full bg-white py-20 sm:py-24 border-b border-[#e5e8ee]">
-        <div className="max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <section className="w-full bg-white py-16 sm:py-24 border-b border-[#e5e8ee]">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             {/* Left: Text */}
             <div className="lg:col-span-4 space-y-4">
               <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#111a2e] tracking-tight">
+              <h2 className="text-[clamp(28px,4.5vw,40px)] font-bold text-[#111a2e] tracking-tight">
                 {content.leadership.title}
               </h2>
-              <div className="text-lg font-bold text-[#111a2e] leading-snug">
+              <div className="text-base sm:text-lg font-bold text-[#111a2e] leading-snug">
                 {content.leadership.subtitle}
               </div>
               <p className="text-base text-[#4b5568] leading-[1.7] pt-1">
                 {content.leadership.body}
               </p>
-              <div className="pt-3">
+              <div className="pt-2">
                 <a
                   href="#contact"
                   onClick={handleContactClick}
-                  className="inline-flex items-center gap-3 px-6 h-[46px] rounded-[6px] bg-[#17213b] text-white text-sm font-semibold hover:bg-[#111a2e] transition-all hover:gap-4 cursor-pointer"
+                  className="inline-flex items-center justify-center gap-3 px-6 min-h-[46px] rounded-[6px] bg-[#17213b] text-white text-sm font-semibold hover:bg-[#111a2e] transition-all hover:gap-4 cursor-pointer w-full sm:w-auto"
                 >
                   <span>{content.leadership.buttonText}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -304,13 +303,13 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </div>
             </div>
 
-            {/* Right: 3 Portrait Cards */}
-            <div className="lg:col-span-8">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {/* Right: Leadership Cards (Scroll snap on mobile ~75% width, 3-col on desktop) */}
+            <div className="lg:col-span-8 overflow-hidden">
+              <div className="flex sm:grid sm:grid-cols-3 gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 sm:pb-0 no-scrollbar">
                 {content.leadership.leaders.map((leader, idx) => (
                   <div
                     key={idx}
-                    className="bg-white rounded-[10px] border border-[#e5e8ee] overflow-hidden shadow-[0_6px_24px_rgba(16,24,40,0.06)] group hover:shadow-lg transition-all"
+                    className="w-[75vw] sm:w-auto shrink-0 snap-start bg-white rounded-[10px] border border-[#e5e8ee] overflow-hidden shadow-[0_6px_24px_rgba(16,24,40,0.06)] group hover:shadow-lg transition-all"
                   >
                     <div className="aspect-[4/3] bg-neutral-100 overflow-hidden">
                       <img
@@ -341,11 +340,11 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       {/* =========================================================================
           A6. OUR VISION & MISSION (Light grey-blue band #f3f5f9)
           ========================================================================= */}
-      <section className="w-full bg-[#f3f5f9] py-20 sm:py-24 border-b border-[#e5e8ee]">
-        <div className="max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)]">
-          <div className="space-y-3 mb-10">
+      <section className="w-full bg-[#f3f5f9] py-16 sm:py-24 border-b border-[#e5e8ee]">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)]">
+          <div className="space-y-3 mb-8 sm:mb-12">
             <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111a2e] tracking-tight">
+            <h2 className="text-[clamp(28px,4.5vw,40px)] font-bold text-[#111a2e] tracking-tight">
               {content.visionMission.title}
             </h2>
           </div>
@@ -353,13 +352,13 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left: Two columns with divider */}
             <div className="lg:col-span-6 bg-white rounded-[12px] p-6 sm:p-10 border border-[#e5e8ee] shadow-[0_6px_24px_rgba(16,24,40,0.06)]">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-[#e5e8ee]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-[#e5e8ee]">
                 {/* Vision */}
                 <div className="space-y-3 pr-0 sm:pr-6">
                   <div className="w-11 h-11 rounded-full bg-[#f3f5f9] flex items-center justify-center text-[#1e4fa3] border border-[#e5e8ee]">
                     <Eye className="w-5 h-5 stroke-[1.5]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#111a2e]">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#111a2e]">
                     {content.visionMission.vision.heading}
                   </h3>
                   <p className="text-sm text-[#4b5568] leading-relaxed">
@@ -372,7 +371,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                   <div className="w-11 h-11 rounded-full bg-[#f3f5f9] flex items-center justify-center text-[#1e4fa3] border border-[#e5e8ee]">
                     <Target className="w-5 h-5 stroke-[1.5]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#111a2e]">
+                  <h3 className="text-lg sm:text-xl font-bold text-[#111a2e]">
                     {content.visionMission.mission.heading}
                   </h3>
                   <p className="text-sm text-[#4b5568] leading-relaxed">
@@ -382,7 +381,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </div>
             </div>
 
-            {/* Right: Landscape Image with Mountain Road */}
+            {/* Right: Landscape Image */}
             <div className="lg:col-span-6">
               <div className="relative rounded-[14px] overflow-hidden shadow-md aspect-[16/9] group">
                 <img
@@ -394,7 +393,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                   className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-10">
-                  <div className="text-xl sm:text-2xl font-bold text-white leading-snug max-w-sm">
+                  <div className="text-lg sm:text-2xl font-bold text-white leading-snug max-w-sm">
                     {content.visionMission.imageOverlay}
                   </div>
                   <div className="w-10 h-1 bg-white mt-3 rounded-full" />
@@ -408,16 +407,16 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       {/* =========================================================================
           A7. GLOBAL PRESENCE (White band)
           ========================================================================= */}
-      <section className="w-full bg-white py-20 sm:py-24 border-b border-[#e5e8ee]">
-        <div className="max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <section className="w-full bg-white py-16 sm:py-24 border-b border-[#e5e8ee]">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left Text */}
             <div className="lg:col-span-4 space-y-4">
               <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#111a2e] tracking-tight">
+              <h2 className="text-[clamp(28px,4.5vw,40px)] font-bold text-[#111a2e] tracking-tight">
                 {content.globalPresence.title}
               </h2>
-              <div className="text-lg font-bold text-[#111a2e]">
+              <div className="text-base sm:text-lg font-bold text-[#111a2e]">
                 {content.globalPresence.subtitle}
               </div>
               <p className="text-base text-[#4b5568] leading-[1.7]">
@@ -427,7 +426,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                 <a
                   href="#contact"
                   onClick={handleContactClick}
-                  className="inline-flex items-center gap-3 px-6 h-[46px] rounded-[6px] border border-[#17213b] text-[#17213b] bg-white text-sm font-semibold hover:bg-[#17213b] hover:text-white transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center gap-3 px-6 min-h-[46px] rounded-[6px] border border-[#17213b] text-[#17213b] bg-white text-sm font-semibold hover:bg-[#17213b] hover:text-white transition-all cursor-pointer w-full sm:w-auto"
                 >
                   <span>{content.globalPresence.buttonText}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -435,21 +434,21 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </div>
             </div>
 
-            {/* Center: Dotted Map with pins */}
-            <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="relative w-full max-w-[480px] aspect-[16/10] flex items-center justify-center p-2">
+            {/* Center: Dotted Map scaling 100% */}
+            <div className="lg:col-span-5 flex flex-col items-center w-full">
+              <div className="relative w-full aspect-[16/10] flex items-center justify-center p-2">
                 <img
                   src="/images/about/map-dots.webp"
                   alt="Global network map"
                   width={480}
                   height={300}
                   loading="lazy"
-                  className="w-full h-auto object-contain opacity-85"
+                  className="w-full h-auto max-w-full object-contain opacity-85"
                 />
               </div>
 
               {/* Map Legend */}
-              <div className="flex items-center gap-6 mt-4 text-xs font-semibold text-[#4b5568]">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mt-3 text-xs font-semibold text-[#4b5568]">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#10b981]" />
                   <span>Manufacturing Facilities</span>
@@ -461,8 +460,8 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </div>
             </div>
 
-            {/* Right: 2 Thumb Cards (India & UAE) */}
-            <div className="lg:col-span-3 space-y-4">
+            {/* Right: 2 Cards (India & UAE) */}
+            <div className="lg:col-span-3 space-y-3 sm:space-y-4 w-full">
               {content.globalPresence.cards.map((card, idx) => (
                 <div
                   key={idx}
@@ -492,16 +491,16 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       {/* =========================================================================
           A8. QUALITY & CERTIFICATIONS (Light band)
           ========================================================================= */}
-      <section className="w-full bg-[#f3f5f9] py-20 sm:py-24 border-b border-[#e5e8ee]">
-        <div className="max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <section className="w-full bg-[#f3f5f9] py-16 sm:py-24 border-b border-[#e5e8ee]">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left */}
             <div className="lg:col-span-5 space-y-4">
               <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#111a2e] tracking-tight">
+              <h2 className="text-[clamp(28px,4.5vw,40px)] font-bold text-[#111a2e] tracking-tight">
                 {content.certifications.title}
               </h2>
-              <div className="text-lg font-bold text-[#111a2e]">
+              <div className="text-base sm:text-lg font-bold text-[#111a2e]">
                 {content.certifications.subtitle}
               </div>
               <p className="text-base text-[#4b5568] leading-[1.7]">
@@ -510,7 +509,7 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               <div className="pt-2">
                 <a
                   href="#materials"
-                  className="inline-flex items-center gap-3 px-6 h-[46px] rounded-[6px] border border-[#17213b] text-[#17213b] bg-white text-sm font-semibold hover:bg-[#17213b] hover:text-white transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center gap-3 px-6 min-h-[46px] rounded-[6px] border border-[#17213b] text-[#17213b] bg-white text-sm font-semibold hover:bg-[#17213b] hover:text-white transition-all cursor-pointer w-full sm:w-auto"
                 >
                   <span>{content.certifications.buttonText}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -518,18 +517,18 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </div>
             </div>
 
-            {/* Right: 4 Outline Cards */}
+            {/* Right: 4 Outline Cards (2x2 on mobile, 4x1 on desktop) */}
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                 {content.certifications.items.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-6 rounded-[10px] bg-white border border-[#e5e8ee] shadow-[0_4px_16px_rgba(16,24,40,0.04)] text-center flex flex-col items-center justify-center min-h-[140px] hover:border-[#17213b] transition-colors"
+                    className="p-5 sm:p-6 rounded-[10px] bg-white border border-[#e5e8ee] shadow-[0_4px_16px_rgba(16,24,40,0.04)] text-center flex flex-col items-center justify-center min-h-[130px] hover:border-[#17213b] transition-colors"
                   >
                     <div className="w-10 h-10 rounded-full bg-[#f3f5f9] flex items-center justify-center text-[#111a2e] mb-3">
                       <FileCheck2 className="w-5 h-5 stroke-[1.5]" />
                     </div>
-                    <div className="text-base font-bold text-[#111a2e] leading-snug">
+                    <div className="text-sm sm:text-base font-bold text-[#111a2e] leading-snug">
                       {item.label}
                     </div>
                     <div className="text-xs text-[#4b5568] mt-1 font-medium">
@@ -544,11 +543,11 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       </section>
 
       {/* =========================================================================
-          A9. SUSTAINABILITY & ESG  |  CSR INITIATIVES (50/50 Split)
+          A9. SUSTAINABILITY & ESG  |  CSR INITIATIVES (Stacked on mobile, 50/50 on desktop)
           ========================================================================= */}
       <section className="w-full grid grid-cols-1 lg:grid-cols-2 border-b border-[#e5e8ee]">
-        {/* Left Half: Sustainability & ESG (Dark green photo background) */}
-        <div className="relative py-16 sm:py-24 px-[clamp(16px,4.5vw,70px)] bg-[#0d2818] overflow-hidden flex flex-col justify-center text-white">
+        {/* Left: Sustainability & ESG */}
+        <div className="relative py-14 sm:py-24 px-5 sm:px-10 lg:px-[clamp(16px,4.5vw,70px)] bg-[#0d2818] overflow-hidden flex flex-col justify-center text-white">
           <img
             src={content.sustainabilityAndCsr.sustainability.image}
             alt="Glass globe on moss representing sustainability"
@@ -557,23 +556,23 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover opacity-35"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0d2818]/90 via-[#0d2818]/70 to-[#0d2818]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0d2818]/95 via-[#0d2818]/80 to-[#0d2818]/50" />
 
           <div className="relative z-10 max-w-xl space-y-4">
             <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+            <h2 className="text-[clamp(28px,4.5vw,38px)] font-bold tracking-tight">
               {content.sustainabilityAndCsr.sustainability.eyebrow}
             </h2>
-            <div className="text-lg font-semibold text-emerald-300">
+            <div className="text-base sm:text-lg font-semibold text-emerald-300">
               {content.sustainabilityAndCsr.sustainability.subtitle}
             </div>
             <p className="text-base text-gray-200 leading-[1.7]">
               {content.sustainabilityAndCsr.sustainability.body}
             </p>
-            <div className="pt-3">
+            <div className="pt-2">
               <a
                 href="#sustainability"
-                className="inline-flex items-center gap-3 px-6 h-[46px] rounded-[6px] border border-white text-white bg-transparent text-sm font-semibold hover:bg-white hover:text-[#0d2818] transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-3 px-6 min-h-[46px] rounded-[6px] border border-white text-white bg-transparent text-sm font-semibold hover:bg-white hover:text-[#0d2818] transition-all cursor-pointer w-full sm:w-auto"
               >
                 <span>{content.sustainabilityAndCsr.sustainability.buttonText}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -582,23 +581,23 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
           </div>
         </div>
 
-        {/* Right Half: CSR Initiatives (Light background with child planting sapling) */}
-        <div className="relative py-16 sm:py-24 px-[clamp(16px,4.5vw,70px)] bg-white overflow-hidden flex flex-col justify-center">
+        {/* Right: CSR Initiatives */}
+        <div className="relative py-14 sm:py-24 px-5 sm:px-10 lg:px-[clamp(16px,4.5vw,70px)] bg-white overflow-hidden flex flex-col justify-center">
           <div className="max-w-xl space-y-4 relative z-10">
             <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#111a2e] tracking-tight">
+            <h2 className="text-[clamp(28px,4.5vw,38px)] font-bold text-[#111a2e] tracking-tight">
               {content.sustainabilityAndCsr.csr.title}
             </h2>
-            <div className="text-lg font-bold text-[#111a2e]">
+            <div className="text-base sm:text-lg font-bold text-[#111a2e]">
               {content.sustainabilityAndCsr.csr.subtitle}
             </div>
             <p className="text-base text-[#4b5568] leading-[1.7]">
               {content.sustainabilityAndCsr.csr.body}
             </p>
-            <div className="pt-3">
+            <div className="pt-2">
               <a
                 href="#sustainability"
-                className="inline-flex items-center gap-3 px-6 h-[46px] rounded-[6px] border border-[#17213b] text-[#17213b] bg-white text-sm font-semibold hover:bg-[#17213b] hover:text-white transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-3 px-6 min-h-[46px] rounded-[6px] border border-[#17213b] text-[#17213b] bg-white text-sm font-semibold hover:bg-[#17213b] hover:text-white transition-all cursor-pointer w-full sm:w-auto"
               >
                 <span>{content.sustainabilityAndCsr.csr.buttonText}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -606,7 +605,6 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
             </div>
           </div>
 
-          {/* Child planting photo subtle position on right */}
           <div className="hidden sm:block absolute right-0 bottom-0 top-0 w-1/3 pointer-events-none opacity-40 lg:opacity-60 overflow-hidden">
             <img
               src={content.sustainabilityAndCsr.csr.image}
@@ -623,16 +621,16 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
       {/* =========================================================================
           A10. AWARDS & RECOGNITION (Light grey-blue band #f3f5f9)
           ========================================================================= */}
-      <section className="w-full bg-[#f3f5f9] py-20 sm:py-24 border-b border-[#e5e8ee]">
-        <div className="max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <section className="w-full bg-[#f3f5f9] py-16 sm:py-24 border-b border-[#e5e8ee]">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             {/* Left */}
             <div className="lg:col-span-4 space-y-4">
               <div className="w-[28px] h-[4px] bg-[#9aa3b2] rounded-full" />
-              <h2 className="text-3xl sm:text-4xl font-bold text-[#111a2e] tracking-tight">
+              <h2 className="text-[clamp(28px,4.5vw,40px)] font-bold text-[#111a2e] tracking-tight">
                 {content.awards.title}
               </h2>
-              <div className="text-lg font-bold text-[#111a2e]">
+              <div className="text-base sm:text-lg font-bold text-[#111a2e]">
                 {content.awards.subtitle}
               </div>
               <p className="text-base text-[#4b5568] leading-[1.7]">
@@ -640,15 +638,13 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
               </p>
             </div>
 
-            {/* Right: 4 Columns with Laurel Wreath Icon */}
+            {/* Right: 4 Awards (2x2 on mobile, 4 in row on desktop) */}
             <div className="lg:col-span-8">
-              <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#e5e8ee] bg-white rounded-[12px] p-6 sm:p-8 border border-[#e5e8ee] shadow-[0_4px_16px_rgba(16,24,40,0.04)]">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-white rounded-[12px] p-5 sm:p-8 border border-[#e5e8ee] shadow-[0_4px_16px_rgba(16,24,40,0.04)]">
                 {content.awards.items.map((award, idx) => (
                   <div
                     key={idx}
-                    className={`flex flex-col items-center text-center p-3 sm:p-4 ${
-                      idx > 0 ? 'pt-6 sm:pt-0' : ''
-                    }`}
+                    className="flex flex-col items-center text-center p-3 sm:p-4"
                   >
                     <div className="w-12 h-12 rounded-full bg-[#f3f5f9] flex items-center justify-center text-[#111a2e] mb-3 border border-[#e5e8ee]">
                       <Award className="w-6 h-6 stroke-[1.5]" />
@@ -669,10 +665,23 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
         </div>
       </section>
 
+      {/* Outline Link to Company Overview */}
+      <div className="w-full bg-[#f3f5f9] py-6 sm:py-8 border-b border-[#e5e8ee]">
+        <div className="max-w-[1480px] mx-auto px-5 sm:px-8 lg:px-[clamp(16px,4.5vw,90px)] flex justify-end">
+          <Link
+            to="/about/company-overview"
+            className="inline-flex items-center justify-center gap-3 px-6 min-h-[46px] rounded-[6px] border border-[#17213b] text-[#17213b] bg-white text-sm font-semibold hover:bg-[#17213b] hover:text-white transition-all shadow-sm cursor-pointer group w-full sm:w-auto"
+          >
+            <span>Company Overview</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </div>
+
       {/* =========================================================================
-          A11. CTA BANNER (Dark navy photo background: Hand with white polymer pellets)
+          A11. CTA BANNER
           ========================================================================= */}
-      <section className="relative w-full bg-[#111a2e] text-white py-20 sm:py-28 overflow-hidden">
+      <section className="relative w-full bg-[#111a2e] text-white py-12 sm:py-24 px-5 sm:px-10 lg:px-[clamp(16px,4.5vw,90px)] overflow-hidden">
         <img
           src={content.cta.image}
           alt="Hand holding white polymer pellets"
@@ -681,21 +690,21 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover opacity-35"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#111a2e]/95 via-[#111a2e]/80 to-[#111a2e]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#111a2e]/98 via-[#111a2e]/85 to-[#111a2e]/65" />
 
-        <div className="relative z-10 max-w-[1480px] mx-auto px-[clamp(16px,4.5vw,90px)] flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <div className="relative z-10 max-w-[1480px] mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="max-w-2xl space-y-3">
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight leading-tight">
+            <h2 className="text-[clamp(26px,4vw,42px)] font-bold tracking-tight leading-tight">
               {content.cta.title}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 font-normal">
               {content.cta.subtitle}
             </p>
-            <div className="pt-4">
+            <div className="pt-3">
               <a
                 href="#contact"
                 onClick={handleContactClick}
-                className="inline-flex items-center gap-3 px-8 h-[48px] rounded-[6px] bg-white text-[#111a2e] text-sm font-semibold hover:bg-neutral-100 transition-all hover:gap-4 shadow-md cursor-pointer"
+                className="inline-flex items-center justify-center gap-3 px-8 min-h-[48px] rounded-[6px] bg-white text-[#111a2e] text-sm font-semibold hover:bg-neutral-100 transition-all hover:gap-4 shadow-md cursor-pointer w-full sm:w-auto"
               >
                 <span>{content.cta.buttonText}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -703,9 +712,9 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
             </div>
           </div>
 
-          {/* Right-aligned overlay text with short underline */}
+          {/* Right-aligned overlay text */}
           <div className="lg:text-right">
-            <div className="text-xl sm:text-2xl font-semibold text-white/90">
+            <div className="text-lg sm:text-2xl font-semibold text-white/90">
               {content.cta.sideNote}
             </div>
             <div className="w-12 h-1 bg-white mt-3 rounded-full lg:ml-auto" />

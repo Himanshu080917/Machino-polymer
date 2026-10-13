@@ -1,19 +1,16 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { HeroSlider } from './components/HeroSlider';
-import { KeyMetricsBar } from './components/KeyMetricsBar';
-import { AboutWrapper } from './components/about/AboutWrapper';
-import { GreenEarthSection } from './components/GreenEarthSection';
-import { IndustriesStrip } from './components/IndustriesStrip';
-import { ManufacturingTechSection } from './components/ManufacturingTechSection';
-import { PhotoBannerSection } from './components/PhotoBannerSection';
-import { QualityDisciplineSection } from './components/QualityDisciplineSection';
-import { MiracRDSection } from './components/MiracRDSection';
-import { FutureMaterialsCTA } from './components/FutureMaterialsCTA';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 import { SearchModal } from './components/SearchModal';
 import { SampleRequestModal } from './components/SampleRequestModal';
 import { ContactModal } from './components/ContactModal';
+
+// Lazy-load page components
+const Home = lazy(() => import('./pages/Home'));
+const AboutUs = lazy(() => import('./pages/AboutUs'));
+const CompanyOverview = lazy(() => import('./pages/CompanyOverview'));
 
 export function App() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -26,96 +23,78 @@ export function App() {
     setIsSampleModalOpen(true);
   };
 
-  const handleExploreMaterials = () => {
-    const el = document.getElementById('materials') || document.getElementById('about');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const handleOpenContact = () => {
     setIsContactModalOpen(true);
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAF9] text-[#0F172A] flex flex-col selection:bg-[#FF5500] selection:text-white">
-      
-      {/* 1. Header / Navbar */}
-      <Navbar
-        onOpenCapabilities={handleExploreMaterials}
-        onOpenContact={handleOpenContact}
-      />
-
-      {/* Main Content Flow */}
-      <main className="flex-1">
-        {/* 2. Hero 6-Stage Lifecycle Carousel */}
-        <HeroSlider />
-
-        {/* 3. Key Metrics Ticker Strip */}
-        <KeyMetricsBar />
-
-        {/* 4. About Us (Part A) & Nested Company Overview (Part B) */}
-        <AboutWrapper
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-[#F8FAF9] text-[#0F172A] flex flex-col selection:bg-[#FF5500] selection:text-white">
+        
+        {/* Global Navbar */}
+        <Navbar
           onOpenContact={handleOpenContact}
         />
 
-        {/* 5. Green Earth Circularity & GRS Certification */}
-        <GreenEarthSection
-          onOpenSampleModal={handleOpenSampleModal}
+        {/* Page Content Flow */}
+        <main className="flex-1">
+          <Suspense
+            fallback={
+              <div className="w-full min-h-[50vh] flex items-center justify-center">
+                <div className="w-8 h-8 border-3 border-[#FF5500] border-t-transparent rounded-full animate-spin" />
+              </div>
+            }
+          >
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Home
+                    onOpenSampleModal={handleOpenSampleModal}
+                    onOpenContact={handleOpenContact}
+                  />
+                }
+              />
+              <Route
+                path="/about"
+                element={<AboutUs onOpenContact={handleOpenContact} />}
+              />
+              <Route
+                path="/about/company-overview"
+                element={<CompanyOverview onOpenContact={handleOpenContact} />}
+              />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
+        </main>
+
+        {/* Global Footer */}
+        <Footer />
+
+        {/* Global Cmd+K Search Modal */}
+        <SearchModal
+          isOpen={isSearchOpen}
+          onClose={() => setIsSearchOpen(false)}
+          onSelectGrade={() => {}}
+          onRequestSample={handleOpenSampleModal}
         />
 
-        {/* 6. Industries We Empower (7-Card Vertical Accordion) */}
-        <IndustriesStrip />
+        {/* Sample Request & RFQ Modal */}
+        <SampleRequestModal
+          isOpen={isSampleModalOpen}
+          onClose={() => setIsSampleModalOpen(false)}
+          preselectedGrade={selectedSampleGrade}
+        />
 
-        {/* 7. Manufacturing Excellence (Precision at Industrial Scale) */}
-        <ManufacturingTechSection />
+        {/* Interactive Start a Conversation / Contact Modal */}
+        <ContactModal
+          isOpen={isContactModalOpen}
+          onClose={() => setIsContactModalOpen(false)}
+        />
 
-        {/* Stacked Panels Container */}
-        <div className="stack-container stack">
-          {/* 8. Full-Bleed Photo Banner (ISO 9001 · IATF 16949 Compliant Production Floor) */}
-          <PhotoBannerSection />
-
-          {/* 9. MIRAC R&D Center (Innovation at the Molecular Level) - FIRST */}
-          <MiracRDSection />
-
-          {/* 10. Quality Management Systems (Quality is a Discipline) - SECOND */}
-          <QualityDisciplineSection />
-
-          {/* 11. Next-Gen Future Materials CTA Banner */}
-          <FutureMaterialsCTA
-            onOpenSampleModal={handleOpenSampleModal}
-            onOpenContact={handleOpenContact}
-          />
-        </div>
-      </main>
-
-      {/* 13. Footer */}
-      <Footer />
-
-      {/* Global Cmd+K Search Modal */}
-      <SearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        onSelectGrade={() => {
-          handleExploreMaterials();
-        }}
-        onRequestSample={handleOpenSampleModal}
-      />
-
-      {/* Sample Request & RFQ Modal */}
-      <SampleRequestModal
-        isOpen={isSampleModalOpen}
-        onClose={() => setIsSampleModalOpen(false)}
-        preselectedGrade={selectedSampleGrade}
-      />
-
-      {/* Interactive Start a Conversation / Contact Modal */}
-      <ContactModal
-        isOpen={isContactModalOpen}
-        onClose={() => setIsContactModalOpen(false)}
-      />
-
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
