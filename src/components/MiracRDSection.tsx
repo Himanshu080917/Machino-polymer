@@ -75,22 +75,22 @@ export const MiracRDSection: React.FC = () => {
       </div>
 
       {/* =====================================================================
-          MOBILE & TABLET LAYOUT (< 1024px) - Stacked: Photo top, content below
+          MOBILE & TABLET LAYOUT (< 1024px) - Clean Stacked: Photo top, content below
           ===================================================================== */}
-      <div className="lg:hidden flex flex-col w-full">
-        {/* Photo on Top (~42svh with dark tint) */}
-        <div className="relative w-full h-[42svh] min-h-[240px] max-h-[380px] overflow-hidden bg-black">
+      <div className="lg:hidden flex flex-col w-full overflow-hidden rounded-t-[28px]">
+        {/* Photo on Top with clean lab photo and dark tint */}
+        <div className="relative w-full h-[34svh] min-h-[220px] max-h-[340px] overflow-hidden bg-black">
           <img
-            src="/images/mirac-lab.jpg"
+            src="/images/mirac-lab-clean.jpg"
             alt="MIRAC Laboratory at Machino Polymers"
-            className="w-full h-full object-cover object-[center_right]"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-black/35" />
+          <div className="absolute inset-0 bg-black/30 pointer-events-none" />
         </div>
 
         {/* Dark Content Panel Below (No 50% split) */}
-        <div className="w-full bg-[#181C22] px-5 sm:px-10 py-8 sm:py-12 space-y-6">
-          <h2 className="text-white font-display font-extrabold tracking-tight leading-[1.12] text-[clamp(30px,6.5vw,42px)]">
+        <div className="w-full bg-[#181C22] px-5 sm:px-10 py-7 sm:py-10 space-y-6">
+          <h2 className="text-white font-display font-extrabold tracking-tight leading-[1.12] text-[clamp(28px,7vw,38px)]">
             <span className="block">Innovation at the</span>
             <span className="block">molecular level.</span>
           </h2>
@@ -114,7 +114,7 @@ export const MiracRDSection: React.FC = () => {
           </div>
 
           {/* Badges Side by Side: DSIR (~110px) and NABL (~90px), never clipped */}
-          <div className="pt-4 flex items-center gap-6 sm:gap-8 flex-nowrap">
+          <div className="pt-2 flex items-center gap-6 sm:gap-8 flex-nowrap">
             <div className="w-[110px] h-[110px] shrink-0">
               <img
                 src="/images/badges/dsir.svg"

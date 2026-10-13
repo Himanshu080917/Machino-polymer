@@ -90,48 +90,35 @@
   width: 100%;
 }
 
+.mirac-stack .stacked-panel-banner {
+  position: sticky;
+  top: var(--nav-h);
+  height: calc(100svh - var(--nav-h));
+  min-height: clamp(380px, 60svh, 540px);
+  z-index: 1;
+  transform-origin: center center;
+  will-change: transform, filter;
+}
+
 @media (min-width: 1024px) {
   .mirac-stack .stacked-panel-banner {
-    position: sticky;
-    top: var(--nav-h);
-    height: calc(100svh - var(--nav-h));
     min-height: 520px;
-    z-index: 1;
-    transform-origin: center center;
-    will-change: transform, filter;
-  }
-
-  .mirac-stack .stacked-panel-mirac {
-    position: relative;
-    z-index: 2;
-    background-color: #181C22;
-    border-top-left-radius: 32px;
-    border-top-right-radius: 32px;
-    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.35);
   }
 }
 
-/* On screens < 1024px: Normal document flow, no sticky pinning, no stacking */
-@media (max-width: 1023px) {
-  .mirac-stack .stacked-panel-banner {
-    position: relative !important;
-    top: auto !important;
-    height: 50svh !important;
-    min-height: 260px !important;
-    max-height: 440px !important;
-    z-index: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
+.mirac-stack .stacked-panel-mirac {
+  position: relative;
+  z-index: 2;
+  background-color: #181C22;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.4);
+}
 
+@media (min-width: 1024px) {
   .mirac-stack .stacked-panel-mirac {
-    position: relative !important;
-    top: auto !important;
-    min-height: auto !important;
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-    box-shadow: none !important;
-    z-index: 2 !important;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
   }
 }
 

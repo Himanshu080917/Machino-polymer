@@ -8,7 +8,7 @@ export const PhotoBannerSection: React.FC = () => {
 
     const handleScroll = () => {
       if (!bannerRef.current) return;
-      if (window.innerWidth < 1024 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         bannerRef.current.style.transform = '';
         bannerRef.current.style.filter = '';
         return;
@@ -58,7 +58,7 @@ export const PhotoBannerSection: React.FC = () => {
   return (
     <section
       ref={bannerRef}
-      className="stacked-panel-banner relative w-full h-[50svh] min-h-[260px] max-h-[440px] sm:h-[340px] lg:h-[calc(100svh-var(--nav-h))] lg:min-h-[520px] lg:max-h-none overflow-hidden bg-[#070B14] flex items-center justify-center transition-[transform,filter] duration-75 ease-out"
+      className="stacked-panel-banner relative w-full h-[calc(100svh-var(--nav-h))] min-h-[380px] lg:min-h-[520px] overflow-hidden bg-[#070B14] flex items-center justify-center transition-[transform,filter] duration-75 ease-out"
     >
       <img
         src="/images/plant-production-floor.jpg"
