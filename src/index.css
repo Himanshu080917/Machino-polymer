@@ -165,3 +165,21 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #FF5500;
 }
+
+/* ==========================================================================
+   About Section & Company Overview Scoped Tokens & Styling
+   ========================================================================== */
+#about {
+  --about-navy: #111a2e;
+  --about-body: #4b5568;
+  --about-accent: #1e4fa3;
+  --about-btn: #17213b;
+  --about-border: #e5e8ee;
+  --about-bg-alt: #f3f5f9;
+  --subnav-height: 52px;
+  scroll-margin-top: var(--navbar-height);
+}
+
+#company-overview {
+  scroll-margin-top: calc(var(--navbar-height) + 52px);
+}

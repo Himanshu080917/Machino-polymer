@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSlider } from './components/HeroSlider';
 import { KeyMetricsBar } from './components/KeyMetricsBar';
-import { MadeInIndiaSection } from './components/MadeInIndiaSection';
+import { AboutWrapper } from './components/about/AboutWrapper';
 import { GreenEarthSection } from './components/GreenEarthSection';
 import { IndustriesStrip } from './components/IndustriesStrip';
 import { ManufacturingTechSection } from './components/ManufacturingTechSection';
@@ -54,12 +54,9 @@ export function App() {
         {/* 3. Key Metrics Ticker Strip */}
         <KeyMetricsBar />
 
-        {/* 4. Made in India, Respected Worldwide (The Plus Factor Philosophy) */}
-        <MadeInIndiaSection
-          onExploreStory={() => {
-            const el = document.getElementById('mirac');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }}
+        {/* 4. About Us (Part A) & Nested Company Overview (Part B) */}
+        <AboutWrapper
+          onOpenContact={handleOpenContact}
         />
 
         {/* 5. Green Earth Circularity & GRS Certification */}
