@@ -26,33 +26,48 @@ export const QualityDisciplineSection: React.FC = () => {
     },
   ];
 
+  const renderImageCard = () => (
+    <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-100 aspect-[630/421] bg-slate-50">
+      <img
+        src="/images/quality-lab-scientist.jpg"
+        alt="Person in cleanroom gear examining a sample at Machino Polymers lab"
+        className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-102"
+      />
+    </div>
+  );
+
   return (
-    <section id="quality" className="py-14 sm:py-28 bg-white text-[#0F172A] relative z-20 overflow-hidden">
-      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-10 lg:px-16 relative z-10 space-y-12 sm:space-y-16 lg:space-y-20">
+    <section id="quality" className="py-12 sm:py-20 lg:py-28 bg-white text-[#0F172A] relative z-20 overflow-hidden">
+      <div className="w-full max-w-[1520px] mx-auto px-5 sm:px-10 lg:px-16 relative z-10 space-y-12 sm:space-y-16 lg:space-y-20">
         
-        {/* Top Split: Left Headline & Certifications, Right Lab Technician Image (Aspect Ratio 4/3) */}
+        {/* Top Section: Heading + Image below heading on mobile, Side-by-side on desktop */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center">
           
-          {/* Left Column: Eyebrow + 3-Line Headline + Certifications */}
+          {/* Left Column (Desktop) / Main Column (Mobile) */}
           <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             <div className="text-[#FF5500] font-mono-tech uppercase text-xs sm:text-sm font-bold tracking-[0.2em]">
               QUALITY MANAGEMENT SYSTEMS
             </div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] font-display leading-[1.08] tracking-tight">
+            <h2 className="text-[clamp(30px,5vw,54px)] font-display leading-[1.08] tracking-tight">
               <div className="font-black text-[#0F172A]">Quality is not</div>
               <div className="font-black text-[#0F172A]">a department.</div>
               <div className="font-light text-[#94A3B8] mt-1">It&apos;s a discipline.</div>
             </h2>
 
-            <div className="pt-3 sm:pt-4 space-y-3">
-              <div className="text-[#0F172A] font-mono-tech text-xs font-bold tracking-[0.15em] uppercase">
+            {/* Mobile/Tablet image card right below the heading */}
+            <div className="lg:hidden pt-2 pb-2">
+              {renderImageCard()}
+            </div>
+
+            <div className="pt-2 sm:pt-4 space-y-3">
+              <div className="text-[#0F172A] font-mono-tech text-xs sm:text-[13px] font-bold tracking-[0.15em] uppercase">
                 CERTIFICATIONS &amp; STANDARDS
               </div>
-              <ul className="space-y-2 text-xs sm:text-sm text-[#475569]">
+              <ul className="space-y-2.5 text-[15px] sm:text-base text-[#475569] leading-relaxed">
                 {certs.map((c, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <span className="text-[#94A3B8] mt-0.5">•</span>
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <span className="text-[#FF5500] mt-1 font-bold">•</span>
                     <span>
                       <strong className="font-bold text-[#0F172A]">{c.code}</strong> — {c.name}
                     </span>
@@ -62,22 +77,16 @@ export const QualityDisciplineSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Lab Technician in Cleanroom Gear */}
-          <div className="lg:col-span-6">
-            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-100 aspect-[630/421] bg-slate-50">
-              <img
-                src="/images/quality-lab-scientist.jpg"
-                alt="Person in cleanroom gear examining a sample at Machino Polymers lab"
-                className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-102"
-              />
-            </div>
+          {/* Right Column: Lab Technician in Cleanroom Gear (Desktop only) */}
+          <div className="hidden lg:block lg:col-span-6">
+            {renderImageCard()}
           </div>
 
         </div>
 
         {/* Bottom Process Grid: 3 Step Cards */}
         <div className="space-y-6 pt-6 border-t border-slate-100">
-          <div className="text-[#0F172A] font-mono-tech text-xs font-bold tracking-[0.18em] uppercase">
+          <div className="text-[#0F172A] font-mono-tech text-xs sm:text-[13px] font-bold tracking-[0.18em] uppercase">
             QUALITY CONTROL PROCESS
           </div>
 
@@ -94,7 +103,7 @@ export const QualityDisciplineSection: React.FC = () => {
                   <h3 className="font-display font-bold text-base sm:text-lg text-[#0F172A]">
                     {step.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+                  <p className="text-sm text-[#64748B] leading-relaxed">
                     {step.desc}
                   </p>
                 </div>

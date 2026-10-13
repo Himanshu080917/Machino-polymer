@@ -130,7 +130,7 @@ export const HeroSlider: React.FC = () => {
       id="hero"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="relative w-full h-[calc(100vh-65px)] min-h-[560px] sm:min-h-[640px] max-h-[940px] flex flex-col justify-between overflow-hidden bg-[#0A0E17]"
+      className="relative w-full h-[calc(100svh-var(--nav-h))] min-h-[560px] sm:min-h-[640px] max-h-[940px] flex flex-col justify-between overflow-hidden bg-[#0A0E17]"
     >
       {/* Horizontal Sliding Carousel Track (Slides smoothly from right to left) */}
       <div
@@ -158,12 +158,12 @@ export const HeroSlider: React.FC = () => {
               }
             />
             {/* Multi-stop cinematic dark gradient overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/80" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/60" />
 
             {/* Mobile Stage Name: Visible and properly fitted on mobile viewports */}
-            <div className="md:hidden absolute top-6 sm:top-8 left-4 sm:left-6 z-10 pointer-events-none">
-              <span className="font-display font-black text-2xl sm:text-3xl text-white tracking-wider uppercase drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]">
+            <div className="md:hidden absolute top-5 sm:top-8 left-5 sm:left-6 z-10 pointer-events-none">
+              <span className="font-display font-black text-xl sm:text-3xl text-white tracking-wider uppercase drop-shadow-[0_3px_12px_rgba(0,0,0,0.9)]">
                 {s.stageName}
               </span>
             </div>
@@ -172,13 +172,13 @@ export const HeroSlider: React.FC = () => {
       </div>
 
       {/* Top spacer for clean layout */}
-      <div className="relative z-10 w-full px-4 sm:px-10 lg:px-16 pt-4 sm:pt-10 pointer-events-none" />
+      <div className="relative z-10 w-full px-5 sm:px-10 lg:px-16 pt-4 sm:pt-10 pointer-events-none" />
 
       {/* Navigation Arrows for Manual Sliding */}
       <button
         onClick={handlePrev}
         aria-label="Previous Slide"
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-[#FF5500] text-white/80 hover:text-white backdrop-blur-md border border-white/10 flex items-center justify-center transition-all duration-200 hidden sm:flex cursor-pointer"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-black/40 hover:bg-[#FF5500] text-white/80 hover:text-white backdrop-blur-md border border-white/10 flex items-center justify-center transition-all duration-200 hidden sm:flex cursor-pointer"
       >
         <ChevronLeft className="w-6 h-6 -translate-x-0.5" />
       </button>
@@ -186,17 +186,17 @@ export const HeroSlider: React.FC = () => {
       <button
         onClick={handleNext}
         aria-label="Next Slide"
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-[#FF5500] text-white/80 hover:text-white backdrop-blur-md border border-white/10 flex items-center justify-center transition-all duration-200 hidden sm:flex cursor-pointer"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-black/40 hover:bg-[#FF5500] text-white/80 hover:text-white backdrop-blur-md border border-white/10 flex items-center justify-center transition-all duration-200 hidden sm:flex cursor-pointer"
       >
         <ChevronRight className="w-6 h-6 translate-x-0.5" />
       </button>
 
       {/* Bottom Content Area */}
-      <div className="relative z-10 w-full px-4 sm:px-10 lg:px-16 pb-6 sm:pb-12 flex flex-col-reverse md:flex-row justify-between items-start md:items-end gap-4 sm:gap-6">
+      <div className="relative z-10 w-full px-5 sm:px-10 lg:px-16 pb-6 sm:pb-12 flex flex-col-reverse md:flex-row justify-between items-start md:items-end gap-4 sm:gap-6">
         
         {/* Left: Interactive 6-Stage Lifecycle Selector */}
         <div className="w-full md:w-auto bg-black/60 backdrop-blur-md rounded-2xl p-2.5 sm:p-3 border border-white/10 shadow-2xl overflow-x-auto max-w-full">
-          <div className="text-[10px] font-mono-tech uppercase tracking-widest text-[#FF5500] font-bold px-2 mb-2 flex items-center gap-1.5">
+          <div className="text-[10px] sm:text-[11px] font-mono-tech uppercase tracking-widest text-[#FF5500] font-bold px-2 mb-2 flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse" />
             <span>MATERIALS LIFECYCLE</span>
           </div>
@@ -209,15 +209,15 @@ export const HeroSlider: React.FC = () => {
                   onClick={() => {
                     setCurrentIdx(idx);
                   }}
-                  className={`px-2.5 sm:px-3 py-1.5 rounded-lg text-xs font-mono-tech transition-all flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 ${
+                  className={`px-3 py-2 min-h-[44px] rounded-lg text-xs font-mono-tech transition-all flex items-center gap-1 sm:gap-1.5 cursor-pointer shrink-0 ${
                     isActive
-                      ? 'bg-[#FF5500] text-white font-bold shadow-lg shadow-[#FF5500]/30 scale-105'
+                      ? 'bg-[#FF5500] text-white font-bold shadow-lg shadow-[#FF5500]/30 scale-102'
                       : 'text-white/70 hover:text-white hover:bg-white/10'
                   }`}
                 >
                   <span>{s.stageName}</span>
                   {idx < slides.length - 1 && (
-                    <ChevronRight className={`w-3 h-3 ${isActive ? 'text-white' : 'text-white/30'}`} />
+                    <ChevronRight className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-white/30'}`} />
                   )}
                 </button>
               );
@@ -239,12 +239,12 @@ export const HeroSlider: React.FC = () => {
                 className="h-full shrink-0 flex flex-col justify-end text-left md:text-right space-y-1 sm:space-y-2 pb-0.5 overflow-hidden"
               >
                 {/* Eyebrow: Bright Orange uppercase letter-spaced text */}
-                <div className="text-[#FF5500] font-mono-tech tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-xs font-bold uppercase drop-shadow-sm">
+                <div className="text-[#FF5500] font-mono-tech tracking-[0.14em] sm:tracking-[0.2em] text-[11px] sm:text-xs font-bold uppercase drop-shadow-sm">
                   {s.eyebrow}
                 </div>
 
                 {/* Large Two-line Headline: Crisp White Bold + Thin Italic Serif */}
-                <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[44px] font-display text-white leading-[1.15] tracking-tight drop-shadow-md">
+                <h2 className="text-[clamp(26px,4vw,44px)] font-display text-white leading-[1.15] tracking-tight drop-shadow-md">
                   <div>
                     <span className="font-extrabold text-white">{s.headlinePart1} </span>
                   </div>
@@ -253,7 +253,7 @@ export const HeroSlider: React.FC = () => {
                   </div>
                 </h2>
 
-                <p className="text-white/75 text-xs sm:text-sm max-w-md ml-0 md:ml-auto leading-relaxed line-clamp-2 sm:line-clamp-none">
+                <p className="text-white/80 text-sm sm:text-base max-w-md ml-0 md:ml-auto leading-relaxed line-clamp-2 sm:line-clamp-none">
                   {s.subtext}
                 </p>
               </div>

@@ -26,18 +26,18 @@ export const ManufacturingTechSection: React.FC = () => {
   ];
 
   return (
-    <section id="manufacturing" className="w-full bg-white text-[#0F172A] pt-14 sm:pt-20 pb-12 sm:pb-16">
-      <div className="w-full max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12">
+    <section id="manufacturing" className="w-full bg-white text-[#0F172A] pt-12 sm:pt-20 pb-12 sm:pb-16">
+      <div className="w-full max-w-[1520px] mx-auto px-5 sm:px-8 lg:px-12">
         
         {/* Two-Column Header matching Figma */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-10 lg:mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start mb-8 lg:mb-16">
           
           {/* Left Column: Green Eyebrow + 2-Line Bold Heading */}
           <div className="lg:col-span-5 space-y-3 sm:space-y-4">
             <div className="text-[#10B981] font-mono-tech uppercase text-xs sm:text-sm font-bold tracking-[0.2em]">
               MANUFACTURING TECHNOLOGIES
             </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-display font-black text-[#0F172A] leading-[1.08] tracking-tight">
+            <h2 className="text-[clamp(30px,5.5vw,56px)] font-display font-black text-[#0F172A] leading-[1.08] tracking-tight">
               <div>Precision at</div>
               <div className="mt-1">industrial scale.</div>
             </h2>
@@ -66,7 +66,7 @@ export const ManufacturingTechSection: React.FC = () => {
 
               {/* Number and Orange Unit */}
               <div className="flex items-baseline gap-2.5 pt-2">
-                <span className="text-5xl sm:text-6xl lg:text-[58px] font-display font-black text-[#0F172A] tracking-tight">
+                <span className="text-4xl sm:text-6xl lg:text-[58px] font-display font-black text-[#0F172A] tracking-tight">
                   {item.number}
                 </span>
                 <span className="text-xs sm:text-sm font-mono-tech font-bold uppercase tracking-wider text-[#FF5500]">
@@ -80,7 +80,7 @@ export const ManufacturingTechSection: React.FC = () => {
               </div>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed pt-1">
+              <p className="text-sm text-[#64748B] leading-relaxed pt-1">
                 {item.desc}
               </p>
             </div>

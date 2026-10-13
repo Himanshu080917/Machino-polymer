@@ -16,7 +16,7 @@ export const FutureMaterialsCTA: React.FC<FutureMaterialsCTAProps> = ({ onOpenCo
 
   return (
     <section id="future-materials" className="relative z-20 w-full bg-[#050D18] overflow-hidden">
-      {/* Full-Fidelity Visual with 100% visible small pieces, molecular rings, and pellets on the left */}
+      {/* Full-Fidelity Visual */}
       <div className="relative w-full max-w-[1920px] mx-auto">
         <img
           src="/images/future-materials-cta.jpg"
@@ -28,7 +28,7 @@ export const FutureMaterialsCTA: React.FC<FutureMaterialsCTAProps> = ({ onOpenCo
         <button
           onClick={handleClick}
           aria-label="Start a conversation"
-          className="absolute left-[6.4%] top-[86.5%] w-[21.2%] h-[6.9%] min-h-[36px] rounded-md opacity-0 hover:opacity-20 bg-white transition-opacity cursor-pointer focus:outline-none focus:opacity-25"
+          className="absolute left-[6.4%] top-[86.5%] w-[21.2%] min-w-[44px] h-[6.9%] min-h-[44px] rounded-md opacity-0 hover:opacity-20 bg-white transition-opacity cursor-pointer focus:outline-none focus:opacity-25"
         />
       </div>
     </section>
