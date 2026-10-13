@@ -6,7 +6,7 @@ export const MiracRDSection: React.FC = () => {
 
   return (
     <section
-      id="mirac"
+      id="mirac-section"
       className="stacked-panel-mirac relative w-full text-white flex flex-col justify-between overflow-hidden bg-[#181C22]"
     >
       {/* =====================================================================

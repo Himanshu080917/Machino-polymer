@@ -15,7 +15,7 @@ export const FutureMaterialsCTA: React.FC<FutureMaterialsCTAProps> = ({ onOpenCo
   };
 
   return (
-    <section id="future-materials" className="relative z-20 w-full bg-[#050D18] overflow-hidden">
+    <section id="future-materials" className="relative w-full bg-[#050D18] overflow-hidden">
       {/* Full-Fidelity Visual */}
       <div className="relative w-full max-w-[1920px] mx-auto">
         <img

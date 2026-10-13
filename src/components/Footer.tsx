@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative z-40 w-full bg-[#070B14] text-[#9CA3AF] border-t border-white/10 pt-16 sm:pt-20 pb-12">
+    <footer id="contact" className="relative w-full bg-[#070B14] text-[#9CA3AF] border-t border-white/10 pt-16 sm:pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-12">
         
         {/* Main Columns Grid: 1 col on mobile, 2 on tablet, 12-col on desktop */}

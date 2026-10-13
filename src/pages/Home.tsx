@@ -21,8 +21,9 @@ export const Home: React.FC<HomeProps> = ({ onOpenSampleModal, onOpenContact }) 
   }, []);
 
   return (
-    <div className="w-full animate-in fade-in duration-200">
+    <div className="w-full">
       {/* 2. Hero 6-Stage Lifecycle Carousel */}
+      <div id="materials" className="scroll-mt-[var(--nav-h)] h-0 w-full pointer-events-none" />
       <HeroSlider />
 
       {/* 3. Key Metrics Ticker Strip */}
@@ -40,23 +41,27 @@ export const Home: React.FC<HomeProps> = ({ onOpenSampleModal, onOpenContact }) 
       {/* 7. Manufacturing Excellence (Precision at Industrial Scale) */}
       <ManufacturingTechSection />
 
-      {/* Stacked Panels Container */}
-      <div className="stack-container stack">
-        {/* 8. Full-Bleed Photo Banner */}
+      {/* Innovation / MIRAC Reliable Scroll Anchor immediately before .mirac-stack */}
+      <div id="innovation" style={{ scrollMarginTop: 'var(--nav-h)' }} className="scroll-mt-[var(--nav-h)] h-0 w-full pointer-events-none" />
+      <div id="mirac" style={{ scrollMarginTop: 'var(--nav-h)' }} className="scroll-mt-[var(--nav-h)] h-0 w-full pointer-events-none" />
+
+      {/* 8 & 9. Stacked Panels Container (MIRAC overlaying Magnific Banner ONLY) */}
+      <div className="mirac-stack relative w-full">
+        {/* Base Panel: Magnific Banner pinned while MIRAC slides over */}
         <PhotoBannerSection />
 
-        {/* 9. MIRAC R&D Center */}
+        {/* Overlay Panel: MIRAC Section with rounded top & shadow */}
         <MiracRDSection />
-
-        {/* 10. Quality Management Systems */}
-        <QualityDisciplineSection />
-
-        {/* 11. Next-Gen Future Materials CTA Banner */}
-        <FutureMaterialsCTA
-          onOpenSampleModal={onOpenSampleModal}
-          onOpenContact={onOpenContact}
-        />
       </div>
+
+      {/* 10. Quality Management Systems (Normal document flow - no overlay effect) */}
+      <QualityDisciplineSection />
+
+      {/* 11. Next-Gen Future Materials CTA Banner (Normal document flow - no overlay effect) */}
+      <FutureMaterialsCTA
+        onOpenSampleModal={onOpenSampleModal}
+        onOpenContact={onOpenContact}
+      />
     </div>
   );
 };

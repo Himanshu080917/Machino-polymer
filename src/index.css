@@ -43,7 +43,7 @@
 
   html, body {
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   html {
@@ -51,7 +51,6 @@
     background-color: #F8FAF9;
     color: #0F172A;
     color-scheme: light;
-    scroll-padding-top: var(--nav-h);
   }
 
   body {
@@ -71,7 +70,6 @@
     min-height: 100svh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
   }
 }
 
@@ -84,49 +82,72 @@
 }
 
 /* ==========================================================================
-   MIRAC Slide-Up Scroll Effect
+   MIRAC Stack Overlay Effect (Applied ONLY to MIRAC & Magnific Banner)
    ========================================================================== */
 
-.stacked-panel-banner {
-  position: sticky;
-  top: var(--nav-h);
-  z-index: 5;
-}
-
-.stacked-panel-mirac {
+.mirac-stack {
   position: relative;
-  z-index: 10;
-  min-height: calc(100svh - var(--nav-h));
-  background-color: #05080F;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
-  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.35);
-  transition: transform 0.25s ease-out;
+  width: 100%;
 }
 
-/* Mobile: On screens <768px, avoid sticky overlaps that trap tall content */
-@media (max-width: 767px) {
-  .stacked-panel-banner {
+@media (min-width: 1024px) {
+  .mirac-stack .stacked-panel-banner {
+    position: sticky;
+    top: var(--nav-h);
+    height: calc(100svh - var(--nav-h));
+    min-height: 520px;
+    z-index: 1;
+    transform-origin: center center;
+    will-change: transform, filter;
+  }
+
+  .mirac-stack .stacked-panel-mirac {
+    position: relative;
+    z-index: 2;
+    background-color: #181C22;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* On screens < 1024px: Normal document flow, no sticky pinning, no stacking */
+@media (max-width: 1023px) {
+  .mirac-stack .stacked-panel-banner {
     position: relative !important;
     top: auto !important;
+    height: 50svh !important;
+    min-height: 260px !important;
+    max-height: 440px !important;
+    z-index: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
-  .stacked-panel-mirac {
-    min-height: auto !important;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
-}
 
-/* Reduced Motion Override */
-@media (prefers-reduced-motion: reduce) {
-  .stacked-panel-banner,
-  .stacked-panel-mirac {
-    position: static !important;
+  .mirac-stack .stacked-panel-mirac {
+    position: relative !important;
     top: auto !important;
     min-height: auto !important;
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
     box-shadow: none !important;
+    z-index: 2 !important;
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .mirac-stack .stacked-panel-banner,
+  .mirac-stack .stacked-panel-mirac {
+    position: static !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
   }
 }
 

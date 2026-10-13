@@ -37,7 +37,7 @@ export const QualityDisciplineSection: React.FC = () => {
   );
 
   return (
-    <section id="quality" className="py-12 sm:py-20 lg:py-28 bg-white text-[#0F172A] relative z-20 overflow-hidden">
+    <section id="quality" className="py-12 sm:py-20 lg:py-28 bg-white text-[#0F172A] relative overflow-hidden">
       <div className="w-full max-w-[1520px] mx-auto px-5 sm:px-10 lg:px-16 relative z-10 space-y-12 sm:space-y-16 lg:space-y-20">
         
         {/* Top Section: Heading + Image below heading on mobile, Side-by-side on desktop */}
