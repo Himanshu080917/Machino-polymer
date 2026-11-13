@@ -179,25 +179,12 @@ export const IndustriesStrip: React.FC<{ onSelectIndustry?: (name: string) => vo
 
               {/* Dynamic Gradient Overlay: Becomes crystal clear when active/clicked */}
               <div
-                className={`absolute inset-0 transition-opacity duration-500 ${
+                className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${
                   isActive
                     ? 'bg-gradient-to-t from-black/80 via-transparent to-black/10'
                     : 'bg-gradient-to-t from-black/60 via-transparent to-black/20 group-hover:opacity-75'
                 }`}
               />
-
-              {/* Top-Right: Interactive Plus / Active Indicator */}
-              <div className="absolute top-5 right-4 sm:right-5 z-20">
-                <div
-                  className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    isActive
-                      ? 'bg-[#FF5500] text-white rotate-45 shadow-lg shadow-[#FF5500]/40 scale-110'
-                      : 'bg-black/30 backdrop-blur-xs text-white/90 group-hover:bg-white/20 group-hover:text-white'
-                  }`}
-                >
-                  <Plus className="w-4 h-4" />
-                </div>
-              </div>
 
               {/* Bottom Card / Title Area */}
               <div className="absolute bottom-6 left-4 right-4 sm:left-5 sm:right-5 z-20">

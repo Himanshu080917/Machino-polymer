@@ -110,11 +110,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCapabilities, onOpenContac
           className="flex items-center gap-2.5 sm:gap-4 md:gap-[clamp(12px,1.5vw,30px)] group focus:outline-none shrink-0 min-h-[44px]"
         >
           <img
-            src="/images/MPL LOGO.jpg"
+            src="/images/logo/mpl-logo-transparent.png"
             alt="Machino Polymers Limited logo"
             width={120}
-            height={95}
-            className="w-[44px] sm:w-[56px] lg:w-[clamp(56px,5.8vw,120px)] h-auto object-contain shrink-0 mix-blend-multiply"
+            height={74}
+            className="w-[44px] sm:w-[56px] lg:w-[clamp(56px,5.8vw,110px)] max-h-[calc(var(--nav-h)-16px)] h-auto object-contain shrink-0"
           />
           <span className="text-[#0B0F1A] font-semibold text-sm sm:text-base lg:text-[clamp(15px,1.05vw,22px)] leading-[1.2] tracking-normal whitespace-nowrap truncate max-w-[170px] sm:max-w-none">
             <span className="hidden sm:inline">Machino Polymers Limited</span>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight,
@@ -33,17 +33,6 @@ export const CompanyOverviewSection: React.FC<CompanyOverviewSectionProps> = ({
   onOpenContact,
 }) => {
   const content = aboutContent.companyOverview;
-  const [currentSlide, setCurrentSlide] = useState(1);
-  const [isHovered, setIsHovered] = useState(false);
-
-  // Auto-advance hero slides every 6s unless hovered
-  useEffect(() => {
-    if (isHovered) return;
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % content.hero.slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [isHovered, content.hero.slides.length]);
 
   const handleContactClick = (e: React.MouseEvent) => {
     if (onOpenContact) {
@@ -117,23 +106,16 @@ export const CompanyOverviewSection: React.FC<CompanyOverviewSectionProps> = ({
           ========================================================================= */}
       <div
         className="w-full relative pt-6 sm:pt-10 pb-16 sm:pb-24 lg:pb-32 overflow-hidden bg-neutral-900"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Background Slide Images */}
+        {/* Background Hero Image */}
         <div className="absolute inset-0 z-0">
-          {content.hero.slides.map((slide, idx) => (
-            <img
-              key={idx}
-              src={slide.image}
-              alt={slide.alt}
-              width={1600}
-              height={900}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                idx === currentSlide ? 'opacity-90' : 'opacity-0 pointer-events-none'
-              }`}
-            />
-          ))}
+          <img
+            src="/images/about/co-hero-scoop.webp?v=clean2"
+            alt="Polymer production steel scoop"
+            width={1600}
+            height={900}
+            className="absolute inset-0 w-full h-full object-cover opacity-90"
+          />
           {/* Legible Overlay: Top-to-bottom white gradient on mobile <768px, left-to-right on desktop */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 to-white/75 sm:bg-gradient-to-r sm:from-white sm:via-white/85 sm:to-black/30 pointer-events-none" />
         </div>
@@ -203,25 +185,6 @@ export const CompanyOverviewSection: React.FC<CompanyOverviewSectionProps> = ({
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Slider Indicators (Bottom Center) */}
-          <div className="flex items-center justify-center gap-1 mt-8 sm:mt-12">
-            {content.hero.slides.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => setCurrentSlide(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                className="min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer p-2"
-              >
-                <span
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    idx === currentSlide ? 'w-10 bg-[#111a2e]' : 'w-4 bg-[#111a2e]/30'
-                  }`}
-                />
-              </button>
-            ))}
           </div>
 
           {/* =========================================================================

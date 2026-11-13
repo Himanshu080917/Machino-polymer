@@ -216,9 +216,9 @@ export const aboutContent = {
       tagline: "TRUSTED MATERIALS. ADVANCING A BRIGHTER TOMORROW.",
       sideBadge: ["HIGH PERFORMANCE POLYMERS", "REAL WORLD POSSIBILITIES"],
       slides: [
-        { image: "/images/about/co-hero-scoop.webp", alt: "Polymer production steel scoop" },
-        { image: "/images/about/co-hero-scoop.webp", alt: "Advanced compounding process" },
-        { image: "/images/about/co-hero-scoop.webp", alt: "High quality polymer compounds" },
+        { image: "/images/about/co-hero-scoop.webp?v=clean2", alt: "Polymer production steel scoop" },
+        { image: "/images/about/co-hero-scoop.webp?v=clean2", alt: "Advanced compounding process" },
+        { image: "/images/about/co-hero-scoop.webp?v=clean2", alt: "High quality polymer compounds" },
       ],
     },
     stats: [
@@ -232,7 +232,7 @@ export const aboutContent = {
       title: "Advanced Polymer Compounds for a Diverse World",
       body: "We develop, manufacture and supply a wide range of polymer compounds tailored to meet the evolving needs of global industries. Our solutions are designed to enhance performance, durability and efficiency.",
       buttonText: "View Product Range",
-      image: "/images/about/co-manufacture-pellets.webp",
+      image: "/images/about/co-manufacture-pellets.webp?v=clean2",
       cardTitle: "ENGINEERED FOR PERFORMANCE",
       features: [
         "Custom Formulations",
@@ -281,7 +281,7 @@ export const aboutContent = {
         "Application Development",
         "Global Supply & Support",
       ],
-      image: "/images/about/co-capabilities-hand.webp",
+      image: "/images/about/co-capabilities-hand.webp?v=clean2",
       imageBadge: ["MATERIAL", "EXPERTISE.", "REAL IMPACT."],
     },
     whyChooseMachino: {

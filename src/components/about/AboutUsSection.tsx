@@ -172,7 +172,6 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                   <blockquote className="text-lg sm:text-2xl lg:text-3xl font-semibold text-white leading-tight max-w-md">
                     {content.story.quote}
                   </blockquote>
-                  <div className="w-12 h-1 bg-white mt-4 rounded-full" />
                 </div>
               </div>
             </div>
@@ -396,7 +395,6 @@ export const AboutUsSection: React.FC<AboutUsSectionProps> = ({ onOpenContact })
                   <div className="text-lg sm:text-2xl font-bold text-white leading-snug max-w-sm">
                     {content.visionMission.imageOverlay}
                   </div>
-                  <div className="w-10 h-1 bg-white mt-3 rounded-full" />
                 </div>
               </div>
             </div>
